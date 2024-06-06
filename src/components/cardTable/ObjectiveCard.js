@@ -27,7 +27,10 @@ const ObjectiveCard = ({ cardId }) => {
     <section className={classes.main} style={{ borderColor: stage.color }}>
       <div className={classes.title}>{card.title.value}</div>
       <div className={classes.phase}>{phases[card.phase].value}</div>
-      <div className={classes.description}>{card.description.value}</div>
+      <div className={classes.descriptionBlock}>
+        <div className={classes.description}>{card.description.value}</div>
+        {card.extra && <div className={classes.extra}>{card.extra.value}</div>}
+      </div>
       <div className={classes.points}>{stage.points}</div>
       <div className={classes.pointsLabel}>{stage.label}</div>
       {expansion?.label && (

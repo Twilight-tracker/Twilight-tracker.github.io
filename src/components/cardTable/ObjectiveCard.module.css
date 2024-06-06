@@ -27,12 +27,22 @@
   font-size: 0.75rem;
 }
 
-.description {
+.descriptionBlock {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 120px;
+}
+
+.description {
   line-height: 1;
-  height: 100px;
+}
+
+.extra {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 .points {

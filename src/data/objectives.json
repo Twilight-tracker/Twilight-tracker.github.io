@@ -717,8 +717,12 @@
       "value": "Покажите флагман в\u00A0деле"
     },
     "description": {
-      "src": "Win a space combat in a system that contains your flagship. You cannot score this objective if your flagship is destroyed in the combat",
-      "value": "Выиграйте космический бой в\u00A0системе, где находится ваш флагман. Вы\u00A0не\u00A0можете выполнить эту цель, если ваш флагман был уничтожен в\u00A0этом бою."
+      "src": "Win a space combat in a system that contains your flagship.",
+      "value": "Выиграйте космический бой в\u00A0системе, где находится ваш флагман."
+    },
+    "extra": {
+      "src": "You cannot score this objective if your flagship is destroyed in the combat",
+      "value": "Вы\u00A0не\u00A0можете выполнить эту цель, если ваш флагман был уничтожен в\u00A0этом бою."
     },
     "phase": "action",
     "stage": "secret",
@@ -759,8 +763,12 @@
       "value": "Разработайте новые стратегии"
     },
     "description": {
-      "src": "Own 2 faction technologies. (*Valefar Assimilator* technologies do not count toward this objective).",
-      "value": "Владейте 2\u00A0фракционными технологиями. Технологии \"Ассимилятор Валефара\" не\u00A0учитываются при\u00A0выполнении этой цели."
+      "src": "Own 2 faction technologies.",
+      "value": "Владейте 2\u00A0фракционными технологиями."
+    },
+    "extra": {
+      "src": "*Valefar Assimilator* technologies do not count toward this objective.",
+      "value": "Технологии \"Ассимилятор Валефара\" не\u00A0учитываются при\u00A0выполнении этой цели."
     },
     "phase": "status",
     "stage": "secret",
