@@ -10,12 +10,12 @@ const HomeMenu = () => {
           <span>Новая игра</span>
           <span className={classes.italic}>Скоро!</span>
         </div>
-        <div className={classes.button}>
-          <Link to="/colors">Выбор цветов</Link>
-        </div>
-        <div className={classes.button}>
-          <Link to="/cards">Карты целей</Link>
-        </div>
+        <Link to="/colors">
+          <div className={classes.button}>Выбор цветов</div>
+        </Link>
+        <Link to="/cards">
+          <div className={classes.button}>Карты целей</div>
+        </Link>
         <div className={classes.warning}>
           Сайт работает в&nbsp;тестовом режиме и&nbsp;предназначен
           для&nbsp;персонального использования администратором игровой сессии.{" "}
