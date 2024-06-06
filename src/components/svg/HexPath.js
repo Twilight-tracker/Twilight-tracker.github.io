@@ -5,9 +5,9 @@ const angleMultiplier = (2 * Math.PI) / verticies;
 
 const HexPath = ({
   sitOnSide = false,
-  center = { x: 400, y: 400 },
-  radius = 200,
-  fill = "#000080",
+  center,
+  radius,
+  fill,
   hoverFill = fill,
   ...props
 }) => {

@@ -57,18 +57,18 @@ const ColorPicker = () => {
     event.preventDefault();
   };
 
-  const center = { x: 600, y: 520 };
+  const baseParameters = { center: { x: 600, y: 520 }, radius: 200 };
 
   return (
     <SvgCanvas className={classes.canvas} viewbox="0 0 1200 1040">
-      <HexPath center={center} />
+      <HexPath {...baseParameters} fill="#000080" />
       {petals.map((petal, index) => {
         const color = colors[petal.colorId];
         return (
           <PetalPath
             key={index}
             id={index}
-            center={center}
+            {...baseParameters}
             className={classes.clickable}
             fill={color.color}
             hoverFill={color.hoverColor}
@@ -83,7 +83,7 @@ const ColorPicker = () => {
             removing ? classes.exit : classes.enter
           }`}
           step={clicked}
-          center={center}
+          {...baseParameters}
           onClick={colorPickHandler}
         />
       )}

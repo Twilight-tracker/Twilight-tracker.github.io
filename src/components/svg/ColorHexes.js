@@ -41,8 +41,8 @@ const coef = 0.55;
 
 const ColorHexes = ({
   sitOnSide = false,
-  center = { x: 400, y: 400 },
-  radius = 200,
+  center,
+  radius,
   step = 0,
   ...props
 }) => {

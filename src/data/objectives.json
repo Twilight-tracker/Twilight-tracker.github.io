@@ -504,7 +504,7 @@
     "id": "revolutionize_warfare",
     "title": {
       "src": "Revolutionize Warfare",
-      "value": "Совершите революцию в вооружении"
+      "value": "Совершите революцию в\u00A0вооружении"
     },
     "description": {
       "src": "Own 3 unit upgrade technologies.",
@@ -658,7 +658,7 @@
     "id": "make_an_example_of_their_world_omega",
     "title": {
       "src": "Make an Example of their World Ω",
-      "value": "Преподайте урок Ω"
+      "value": "Преподайте урок\u00A0Ω"
     },
     "description": {
       "src": "Destroy the last of a player's ground forces on a planet during the bombardment step.",
@@ -820,7 +820,7 @@
     "id": "defy_space_and_time",
     "title": {
       "src": "Defy Space and Time",
-      "value": "Подчините время и пространство"
+      "value": "Подчините время и\u00A0пространство"
     },
     "description": {
       "src": "Have units in the wormhole nexus.",
@@ -904,7 +904,7 @@
     "id": "foster_cohesion",
     "title": {
       "src": "Foster Cohesion",
-      "value": "Стремитесь к сплоченности"
+      "value": "Стремитесь к\u00A0сплоченности"
     },
     "description": {
       "src": "Be neighbors with all other players.",
@@ -1062,7 +1062,7 @@
     },
     "description": {
       "src": "Have units with a combined production of at least 8 in a single system.",
-      "value": "У вас должны быть отряды в\u00A0одной системе с\u00A0суммарным значением \"ПРОИЗВОДСТВО 8\" или\u00A0больше."
+      "value": "У вас должны быть отряды в\u00A0одной системе с\u00A0суммарным значением \"ПРОИЗВОДСТВО\u00A08\" или\u00A0больше."
     },
     "phase": "status",
     "stage": "secret",

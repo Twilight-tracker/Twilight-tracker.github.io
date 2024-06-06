@@ -1,4 +1,4 @@
-import ObjectiveCard from "./ObjectiveCard";
+import HexCard from "./HexCard";
 import objectives from "../../data/objectives.json";
 import classes from "./CardTable.module.css";
 
@@ -13,7 +13,7 @@ const CardTable = ({ filters }) => {
       {Object.values(objectives)
         .filter(filterFunc)
         .map((card) => (
-          <ObjectiveCard key={card.id} cardId={card.id} />
+          <HexCard key={card.id} cardId={card.id} />
         ))}
     </section>
   );
