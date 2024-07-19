@@ -5,11 +5,11 @@ const colorCount = 6;
 const defaultPoints = 10;
 const pointOptions = [10, 12, 14];
 const defaultColor = { colorId: "_default" };
-const defaultColors = [...Array(colorCount).keys()].map((_) => defaultColor);
+const defaultColors = [...Array(colorCount).keys()].map((_) => structuredClone(defaultColor));
 
 const defaults = {
-  points: defaultPoints,
-  colors: defaultColors,
+  points: structuredClone(defaultPoints),
+  colors: structuredClone(defaultColors),
 };
 
 const validatePosition = (position) => {
