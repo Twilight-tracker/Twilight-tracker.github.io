@@ -1,0 +1,17 @@
+.main {
+  position: relative;
+  display: inline-block;
+  margin: 0 1px;
+  width: 240px;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.content {
+  pointer-events: none;
+}

@@ -2,8 +2,11 @@ import UpArrowSvg from "./UpArrowSvg";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import classes from "./ScrollToTop.module.css";
 
-const ScrollToTop = () => {
-  const [showButton, scrollMethod] = useScrollToTop({ behavior: "smooth" });
+const ScrollToTop = ({ containerId }) => {
+  const [showButton, scrollMethod] = useScrollToTop({
+    containerId: containerId,
+    behavior: "smooth",
+  });
 
   if (showButton) {
     return (

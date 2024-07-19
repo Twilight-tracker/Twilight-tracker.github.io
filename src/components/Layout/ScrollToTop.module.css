@@ -1,11 +1,11 @@
 .container {
-  position: fixed;
+  position: sticky;
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  bottom: 70px;
-  right: 5vw;
-  background-color: blueviolet;
+  bottom: 60px;
+  left: calc(100% - 80px);
+  background-color: rgb(44, 178, 210);
   opacity: 0.9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   text-align: center;

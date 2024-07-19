@@ -1,0 +1,39 @@
+.total {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 4rem 0.5rem;
+  background: rgba(230, 230, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.main {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: hsl(239, 97%, 45%);
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-shadow: -1px 1px 0 hsl(239, 96%, 80%), 1px 1px 0 hsl(239, 96%, 80%),
+  1px -1px 0 hsl(239, 96%, 80%), -1px -1px 0 hsl(239, 96%, 80%);
+}
+
+.warning {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.redWarning {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: red;
+  text-shadow: -1px 1px 0 rgb(100, 0, 0), 1px 1px 0 rgb(100, 0, 0),
+    1px -1px 0 rgb(100, 0, 0), -1px -1px 0 rgb(100, 0, 0);
+}

@@ -782,7 +782,7 @@
     },
     "description": {
       "src": "Have 1 or more ships in a system that contains an alpha wormhole and 1 or more ships in a system that contains a beta wormhole.",
-      "value": "У вас должен быть хотя\u00A0бы 1\u00A0корабль в\u00A0системе с альфа-червоточиной и\u00A0хотя\u00A0бы 1\u00A0корабль в\u00A0системе с\u00A0бета-червоточиной."
+      "value": "У вас должен быть хотя\u00A0бы 1\u00A0корабль в\u00A0системе с\u00A0альфа-червоточиной и\u00A0хотя\u00A0бы 1\u00A0корабль в\u00A0системе с\u00A0бета-червоточиной."
     },
     "phase": "status",
     "stage": "secret",

@@ -1,0 +1,49 @@
+.container {
+  position: absolute;
+  top: 10px;
+  left: 20%;
+  z-index: 21;
+  width: calc(80% - 10px);
+  background: rgba(208, 208, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top-left-radius: 16px;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: auto;
+}
+
+.enter {
+  animation: overlayEnter 0.3s ease-in-out forwards;
+}
+
+.exit {
+  animation: overlayExit 0.3s ease-in-out forwards;
+}
+
+@keyframes overlayEnter {
+  from {
+    transform: translateY(400px);
+    opacity: 0;
+    height: calc(100vh - 420px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    height: calc(100vh - 20px);
+  }
+}
+
+@keyframes overlayExit {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    height: calc(100vh - 110px);
+  }
+  to {
+    transform: translateY(400px);
+    opacity: 0;
+    height: calc(100vh - 510px);
+  }
+}

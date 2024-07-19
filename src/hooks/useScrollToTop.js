@@ -1,31 +1,35 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
-export function scrollToTopSmooth() {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-}
-export function scrollToTop() {
-  window.scrollTo(0, 0);
-}
-
-export function useScrollToTop({ behavior }) {
+export function useScrollToTop({ containerId, behavior }) {
   const [showButton, setShowButton] = useState(false);
-  const { pathname } = useLocation();
-
-  const scrollMethod = behavior === "smooth" ? scrollToTopSmooth : scrollToTop;
+  const scrollMethod = () => {
+    const scrollParameters = { top: 0, left: 0, behavior: behavior };
+    if (containerId) {
+      document.getElementById(containerId).scrollTo(scrollParameters);
+    } else {
+      window.scrollTo(scrollParameters);
+    }
+  };
 
   useEffect(() => {
-    scrollMethod();
-  }, [pathname, scrollMethod]);
-
-  useEffect(() => {
-    const handleScrollToTop = () => {
-      setShowButton(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScrollToTop);
-    return () => {
-      window.removeEventListener("scroll", handleScrollToTop);
-    };
-  }, []);
+    if (containerId) {
+      const container = document.getElementById(containerId);
+      const handleScrollToTop = (event) => {
+        setShowButton(event.target.scrollTop > 300);
+      };
+      container.addEventListener("scroll", handleScrollToTop);
+      return () => {
+        container.removeEventListener("scroll", handleScrollToTop);
+      };
+    } else {
+      const handleScrollToTop = () => {
+        setShowButton(window.scrollY > 300);
+      };
+      window.addEventListener("scroll", handleScrollToTop);
+      return () => {
+        window.removeEventListener("scroll", handleScrollToTop);
+      };
+    }
+  }, [containerId]);
   return [showButton, scrollMethod];
 }

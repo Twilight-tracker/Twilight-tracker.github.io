@@ -1,13 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import Background from "./components/Layout/Background";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardsPage";
-import ColorsPage from "./pages/ColorsPage";
+import NewGamePage from "./pages/NewGamePage";
+import GamePage from "./pages/GamePage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <Background />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -19,8 +22,12 @@ export const router = createBrowserRouter([
         element: <CardsPage />,
       },
       {
-        path: "colors",
-        element: <ColorsPage />,
+        path: "newGame",
+        element: <NewGamePage />,
+      },
+      {
+        path: "game",
+        element: <GamePage />,
       },
     ],
   },

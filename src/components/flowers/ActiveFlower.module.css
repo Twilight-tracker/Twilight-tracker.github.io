@@ -1,0 +1,30 @@
+.main {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  width: 270px;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hex {
+  cursor: pointer;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.flower {
+  cursor: pointer;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1)); 
+}
+
+.content {
+  position: absolute;
+  top: 60px;
+  left: 10%;
+  margin: 0;
+  padding: 4px 8px;
+  width: 80%;
+  height: 190px;
+  pointer-events: none;
+}

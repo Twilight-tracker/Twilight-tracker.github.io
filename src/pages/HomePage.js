@@ -1,4 +1,4 @@
-import HomeMenu from "../components/HomeMenu";
+import HomeMenu from "../components/views/homeView/HomeMenu";
 
 const HomePage = () => {
   document.title = "Трекер Сумерек";

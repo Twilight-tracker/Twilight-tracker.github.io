@@ -1,0 +1,1 @@
+export const baseParameters = { center: { x: 260, y: 300 }, radius: 200 };

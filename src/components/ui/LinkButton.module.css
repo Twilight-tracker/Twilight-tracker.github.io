@@ -1,0 +1,12 @@
+.link {
+  text-decoration: none;
+}
+
+.button {
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}

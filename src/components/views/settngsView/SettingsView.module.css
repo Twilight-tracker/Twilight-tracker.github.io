@@ -1,0 +1,34 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.title {
+  color: hsl(197, 50%, 10%);
+  text-shadow: -1px 1px 0 hsl(239, 96%, 90%), 1px 1px 0 hsl(239, 96%, 90%),
+    1px -1px 0 hsl(239, 96%, 90%), -1px -1px 0 hsl(239, 96%, 90%);
+  margin: 0;
+  padding-top: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.label {
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
+
+.italic {
+  font-style: italic;
+  color: yellow;
+}
+
+.buttons {
+  max-width: 400px;
+  margin: 15px auto;
+}

@@ -1,0 +1,30 @@
+.total {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  padding: 10px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.main {
+  max-width: 500px;
+  margin-inline: 20px;
+  text-align: center;
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.showMenu {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

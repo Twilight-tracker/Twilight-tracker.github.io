@@ -38,15 +38,17 @@ const dataPoints = [
 ];
 
 const coef = 0.55;
+const adjustFirstPlayerToTop = -2;
 
 const ColorHexes = ({
-  sitOnSide = false,
+  sitOnSide = true,
   center,
   radius,
-  step = 0,
+  playerIndex = 0,
   ...props
 }) => {
-  const alpha = (step * Math.PI) / 3;
+  const sideAngle = sitOnSide ? 0.5 : 0;
+  const alpha = ((playerIndex + adjustFirstPlayerToTop + sideAngle) * Math.PI) / 3;
   return (
     <>
       {dataPoints.map(({ shift, colorId }) => {

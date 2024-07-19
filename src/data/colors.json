@@ -2,46 +2,62 @@
   "_default": {
     "id": "_default",
     "color": "white",
-    "hoverColor": "whitesmoke"
+    "hoverColor": "whitesmoke",
+    "inactiveColor": "white"
   },
   "black": {
     "id": "black",
     "color": "hsl(0, 0%, 15%)",
-    "hoverColor": "hsl(0, 0%, 25%)"
+    "hoverColor": "hsl(0, 0%, 25%)",
+    "inactiveColor": "hsl(0, 0%, 40%)"
   },
   "blue": {
     "id": "blue",
-    "color": "hsl(210, 100%, 35%)",
-    "hoverColor": "hsl(210, 100%, 45%)"
+    "color": "hsl(210, 100%, 33%)",
+    "_color": "hsl(211, 100%, 28%)",
+    "hoverColor": "hsl(210, 100%, 45%)",
+    "inactiveColor": "hsl(210, 60%, 60%)"
   },
   "orange": {
     "id": "orange",
     "color": "hsl(24, 100%, 50%)",
-    "hoverColor": "hsl(24, 100%, 60%)"
+    "hoverColor": "hsl(24, 100%, 60%)",
+    "inactiveColor": "hsl(24, 60%, 70%)"
   },
   "red": {
     "id": "red",
-    "color": "hsl(0, 100%, 40%)",
-    "hoverColor": "hsl(0, 100%, 50%)"
+    "color": "hsl(0, 100%, 30%)",
+    "_color": "hsl(0, 100%, 25%)",
+    "hoverColor": "hsl(0, 100%, 40%)",
+    "inactiveColor": "hsl(0, 60%, 60%)"
   },
   "pink": {
     "id": "pink",
-    "color": "hsl(323, 100%, 50%)",
-    "hoverColor": "hsl(323, 100%, 60%)"
+    "_color": "hsl(323, 100%, 50%)",
+    "color": "hsl(315, 100%, 40%)",
+    "hoverColor": "hsl(323, 100%, 60%)",
+    "inactiveColor": "hsl(323, 60%, 70%)"
   },
   "green": {
     "id": "green",
-    "color": "hsl(150, 100%, 30%)",
-    "hoverColor": "hsl(150, 100%, 40%)"
+    "color": "hsl(146, 70%, 25%)",
+    "_color": "hsl(146, 97%, 12%)",
+    "hoverColor": "hsl(150, 70%, 35%)",
+    "inactiveColor": "hsl(150, 30%, 50%)"
   },
   "yellow": {
     "id": "yellow",
-    "color": "hsl(33, 100%, 70%)",
-    "hoverColor": "hsl(33, 100%, 80%)"
+    "_color": "hsl(45, 100%, 60%)",
+    "color": "hsl(50, 100%, 63%)",
+    "hoverColor": "hsl(45, 100%, 80%)",
+    "inactiveColor": "hsl(45, 60%, 80%)",
+    "textColor": "#000"
   },
   "purple": {
     "id": "purple",
-    "color": "hsl(300, 100%, 30%)",
-    "hoverColor": "hsl(300, 100%, 40%)"
+    "color": "hsl(300, 80%, 20%)",
+    "_color": "hsl(300, 81%, 16%)",
+    "hoverColor": "hsl(300, 80%, 35%)",
+    "inactiveColor": "hsl(300, 40%, 60%)"
   }
 }

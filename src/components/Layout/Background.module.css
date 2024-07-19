@@ -1,0 +1,27 @@
+.main {
+  position: relative;
+  text-align: center;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url("../../assets/spaceBackground.jpg");
+  background-size: auto 145%;
+  background-position: 0%;
+  background-attachment: fixed;
+  background-color: black;
+  z-index: -1;
+}
+
+.attribution {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 0.8rem;
+  color: #2c75be;
+}

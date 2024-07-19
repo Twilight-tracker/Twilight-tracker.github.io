@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const verticies = 6;
-const angleMultiplier = (2 * Math.PI) / verticies;
+const angleMultiplier = 2 * Math.PI / verticies;
 
 const HexPath = ({
-  sitOnSide = false,
+  sitOnSide = true,
   center,
   radius,
   fill,

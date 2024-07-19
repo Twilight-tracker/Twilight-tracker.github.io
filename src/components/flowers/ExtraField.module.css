@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 80px;
+  height: 100px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 3.5rem;
+  line-height: 100px;
+  vertical-align: middle;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  pointer-events: fill;
+  cursor: pointer;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.hex {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}

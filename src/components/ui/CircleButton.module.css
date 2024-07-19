@@ -1,0 +1,13 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(circle at 70% 70%,
+    hsl(239, 97%, 45%),
+    hsl(239, 97%, 55%) 40%,
+    hsl(239, 97%, 65%) 90%,
+    hsl(239, 97%, 90%)
+  );
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
