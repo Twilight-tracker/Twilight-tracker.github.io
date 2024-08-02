@@ -7,7 +7,9 @@ const defaultObjective = { cardId: undefined, points: defaultPoints };
 const defaultExtraPoints = [...Array(playerCount).keys()].map((_) => 0);
 
 const defaults = {
-  objectives: [...Array(objectiveCount).keys()].map((_) => structuredClone(defaultObjective)),
+  objectives: [...Array(objectiveCount).keys()].map((_) =>
+    structuredClone(defaultObjective)
+  ),
   extraPoints: structuredClone(defaultExtraPoints),
 };
 
@@ -101,7 +103,11 @@ export const actions = {
 };
 
 const initialState = {
-  gameState: JSON.parse(localStorage.getItem("gameState")) ?? structuredClone(defaults),
+  gameState: {
+    ...structuredClone(defaults),
+    ...(JSON.parse(localStorage.getItem("gameState")) ??
+      structuredClone(defaults)),
+  },
 };
 
 export const configureStorage = () => {

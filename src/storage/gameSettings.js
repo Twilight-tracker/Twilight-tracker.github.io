@@ -102,9 +102,11 @@ export const actions = {
 };
 
 const initialState = {
-  gameSettings:
-    JSON.parse(localStorage.getItem("gameSettings")) ??
-    structuredClone(defaults),
+  gameSettings: {
+    ...structuredClone(defaults),
+    ...(JSON.parse(localStorage.getItem("gameSettings")) ??
+      structuredClone(defaults)),
+  },
 };
 
 export const configureStorage = () => {
