@@ -1,31 +1,34 @@
+import { createContext, useContext, useState } from "react";
 import { useStorage } from "../../../hooks/useStorage";
-import ColorPicker from "./ColorPicker";
-import LinkButton from "../../ui/LinkButton";
+import FactionPicker from "./FactionPicker";
+import FactionView from "../factionsView/FactionsView";
+import SettingsMenu from "./SettingsMenu";
 import classes from "./SettingsView.module.css";
 
+const SettingsContext = createContext();
+
+export const useSettingsContext = () => {
+  return useContext(SettingsContext);
+};
+
 const SettingsView = () => {
-  const [_, dispatch] = useStorage();
-  const resetHandler = () => {
-    dispatch("RESET_STATE", {});
+  const { dispatch } = useStorage();
+  const [playerActivated, setPlayerActivated] = useState(-1);
+
+  const setFaction = (factionId) => {
+    dispatch("SET_FACTION", { position: playerActivated, factionId });
+    setPlayerActivated(-1);
   };
+  const context = { playerActivated, setPlayerActivated, setFaction };
 
   return (
-    <section className={classes.main}>
-      <h1 className={classes.title}>Выберите цвета игроков</h1>
-      <ColorPicker />
-      <div className={classes.fractions}>
-        <div className={classes.label}>
-          Выбор фракций <span className={classes.italic}>Скоро!</span>
-        </div>
+    <SettingsContext.Provider value={context}>
+      <div className={classes.main}>
+        <FactionPicker className={classes.colorPicker} />
+        <FactionView className={classes.factions} />
+        <SettingsMenu />
       </div>
-      <div className={classes.buttons}>
-        <LinkButton to="/game">Продолжить игру</LinkButton>
-        <LinkButton to="/game" onClick={resetHandler}>
-          Начать новую игру
-        </LinkButton>
-        <LinkButton to="/">Назад</LinkButton>
-      </div>
-    </section>
+    </SettingsContext.Provider>
   );
 };
 

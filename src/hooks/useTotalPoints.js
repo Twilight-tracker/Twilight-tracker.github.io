@@ -4,10 +4,11 @@ import objectives from "../data/objectives.json";
 const stagePoints = {
   stage1: 1,
   stage2: 2,
+  secret: 1
 };
 
 export const useTotalPoints = () => {
-  const storage = useStorage()[0];
+  const { storage } = useStorage();
   const totalPoints = storage.gameState.extraPoints.map(
     (extra, index) =>
       extra +

@@ -2,15 +2,14 @@ import { useRef } from "react";
 import { useLocale, useNumberField } from "react-aria";
 import { useNumberFieldState } from "react-stately";
 import { useStorage } from "../../hooks/useStorage";
-import SvgCanvas from "../svg/SvgCanvas";
-import HexPath from "../svg/HexPath";
-import LeafButton from "./LeafButton";
+import Button from "../ui/Button";
+import HexedCanvas from "../svg/HexedCanvas";
 import colors from "../../data/colors.json";
-import { baseParameters } from "../svg/constants";
+import { hexBase } from "../svg/constants";
 import classes from "./ExtraField.module.css";
 
 const ExtraField = ({ playerIndex, ...props }) => {
-  const [storage, dispatch] = useStorage();
+  const { storage, dispatch } = useStorage();
   const colorId = storage.gameSettings.colors[playerIndex].colorId;
   const color = colors[colorId];
   const colorProps = {
@@ -27,28 +26,28 @@ const ExtraField = ({ playerIndex, ...props }) => {
   const { groupProps, inputProps, incrementButtonProps, decrementButtonProps } =
     useNumberField({ ...props, value, onChange }, state, inputRef);
 
-  const parameters = { ...baseParameters, center: { x: 400, y: 200 } };
+  const resizedBase = { ...hexBase, width: 800, height: 400 };
 
   return (
     <div className={classes.container} {...groupProps}>
       <input className={classes.input} {...inputProps} ref={inputRef} />
-      <SvgCanvas viewbox="0 0 800 400" className={classes.svg}>
-        <HexPath className={classes.hex} fill="whitesmoke" {...parameters} />
-        <LeafButton
-          className={classes.button}
-          leafType="backward"
-          {...parameters}
-          {...colorProps}
-          {...decrementButtonProps}
-        />
-        <LeafButton
-          className={classes.button}
-          leafType="forward"
-          {...parameters}
-          {...colorProps}
-          {...incrementButtonProps}
-        />
-      </SvgCanvas>
+      <HexedCanvas className={classes.svg} hexBase={resizedBase}>
+        <HexedCanvas.Hex className={classes.hex} fill="whitesmoke" />
+        <Button {...decrementButtonProps}>
+          <HexedCanvas.Leaf
+            className={classes.button}
+            leafType="backward"
+            {...colorProps}
+          />
+        </Button>
+        <Button {...incrementButtonProps}>
+          <HexedCanvas.Leaf
+            className={classes.button}
+            leafType="forward"
+            {...colorProps}
+          />
+        </Button>
+      </HexedCanvas>
     </div>
   );
 };

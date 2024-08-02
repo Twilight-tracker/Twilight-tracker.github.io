@@ -1,8 +1,10 @@
-import HexPath from "../../svg/HexPath";
-import SvgCanvas from "../../svg/SvgCanvas";
+import classNames from "classnames/bind";
+import HexedCanvas from "../../svg/HexedCanvas";
+import CardContent from "./CardContent";
 import objectives from "../../../data/objectives.json";
 import classes from "./HexCard.module.css";
-import CardContent from "./CardContent";
+
+const cx = classNames.bind(classes);
 
 const stages = {
   stage1: { points: 1, color: "goldenrod", label: "очко" },
@@ -20,19 +22,22 @@ const HexCard = ({ cardId, onConfirm }) => {
     }
   };
 
+  const hexClass = cx({
+    hex: true,
+    pointer: onConfirm,
+  });
+
+  const hexBase = { width: 610, height: 530, radius: 300 };
+
   return (
     <div className={classes.main}>
-      <SvgCanvas className={classes.canvas} viewbox="0 0 606 526">
-        <HexPath
-          className={onConfirm ? classes.pointer : ""}
-          center={{ x: 303, y: 263 }}
-          radius={300}
-          fill="#fff"
+      <HexedCanvas className={classes.canvas} hexBase={hexBase}>
+        <HexedCanvas.Hex
+          className={hexClass}
           stroke={stage.color}
-          strokeWidth="3px"
           onClick={clickHandler}
         />
-      </SvgCanvas>
+      </HexedCanvas>
       <CardContent className={classes.content} card={card} />
     </div>
   );

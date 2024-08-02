@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { useStorage } from "../../hooks/useStorage";
+import { useGameViewContext } from "../views/gameView/GameView";
 import CardContent from "../views/cardsView/CardContent";
-import SvgCanvas from "../svg/SvgCanvas";
-import HexPath from "../svg/HexPath";
-import FlowerPath from "../svg/FlowerPath";
-import { baseParameters } from "../svg/constants";
-  import objectives from "../../data/objectives.json";
+import HexedCanvas from "../svg/HexedCanvas";
+import { hexBase } from "../svg/constants";
+import objectives from "../../data/objectives.json";
 import colors from "../../data/colors.json";
 
 import classes from "./ActiveFlower.module.css";
@@ -16,7 +16,10 @@ const stageColors = {
 };
 
 const ActiveFlower = ({ cardIndex }) => {
-  const [storage, dispatch] = useStorage();
+  const { magnifierActive } = useGameViewContext();
+
+  const [clickCount, setClickCount] = useState(0);
+  const { storage, dispatch } = useStorage();
   const { cardId, points } = storage.gameState.objectives[cardIndex];
 
   const petals = storage.gameSettings.colors;
@@ -24,40 +27,53 @@ const ActiveFlower = ({ cardIndex }) => {
     const color = colors[petal.colorId];
     return {
       fill: `color-mix(in srgb, ${color.color} ${
-        points[index] ? "90%" : "20%"
+        points[index] ? "98%" : "20%"
       }, transparent)`,
       hoverFill: color.hoverColor,
     };
   });
 
-  const hexClickHandler = () =>
+  const hexClickHandler = () => {
+    if (clickCount === 0) {
+      setClickCount(1);
+      setTimeout(() => {
+        setClickCount(0);
+      }, 1000);
+      return;
+    }
+    setClickCount(0);
     dispatch("RESET_OBJECTIVE", { cardIndex: cardIndex });
+  };
 
   const petalClickHandler = (index) =>
     dispatch("TOGGLE_POINTS", { cardIndex: cardIndex, playerIndex: index });
 
   const card = objectives[cardId];
   const fillAndStroke = card
-    ? { fill: "#fff", stroke: stageColors[card.stage], strokeWidth: "3px" }
-    : { fill: "#3f3f3f" };
+    ? {
+        fill: clickCount
+          ? "rgba(128, 64, 64, 1)"
+          : "rgba(64, 64, 128, 1)",
+        stroke: stageColors[card.stage],
+        strokeWidth: "2px",
+      }
+    : { fill: "rgba(128, 64, 64, 1)" };
 
+  const canvasClass = [classes.canvas, magnifierActive ? classes.magnified : ""].join(" ");
   return (
     <div className={classes.main}>
-      <SvgCanvas viewbox="0 0 520 600">
-        <HexPath
-          className={classes.hex}
-          onClick={hexClickHandler}
-          {...baseParameters}
-          {...fillAndStroke}
-        />
-        <FlowerPath
+      <HexedCanvas className={canvasClass} hexBase={hexBase}>
+        <HexedCanvas.Flower
           petalProps={petalProps}
           className={classes.flower}
-          // className={classes.clickable}
-          {...baseParameters}
           onPetalClick={petalClickHandler}
         />
-      </SvgCanvas>
+        <HexedCanvas.Hex
+          className={classes.hex}
+          onClick={hexClickHandler}
+          {...fillAndStroke}
+        />
+      </HexedCanvas>
       {card && <CardContent className={classes.content} card={card} />}
     </div>
   );

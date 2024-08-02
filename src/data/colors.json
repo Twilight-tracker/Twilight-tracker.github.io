@@ -3,7 +3,8 @@
     "id": "_default",
     "color": "white",
     "hoverColor": "whitesmoke",
-    "inactiveColor": "white"
+    "inactiveColor": "white",
+    "textColor": "#000"
   },
   "black": {
     "id": "black",

@@ -1,4 +1,5 @@
 import HexPath from "./HexPath";
+import { useHexedCanvasContext } from "./HexedCanvas";
 import colors from "../../data/colors.json";
 
 const sqrt3 = Math.sqrt(3);
@@ -42,11 +43,12 @@ const adjustFirstPlayerToTop = -2;
 
 const ColorHexes = ({
   sitOnSide = true,
-  center,
-  radius,
   playerIndex = 0,
   ...props
 }) => {
+  const { width, height, radius } = useHexedCanvasContext();
+  const center = { x: 0.5 * width, y: 0.5 * height };
+
   const sideAngle = sitOnSide ? 0.5 : 0;
   const alpha = ((playerIndex + adjustFirstPlayerToTop + sideAngle) * Math.PI) / 3;
   return (

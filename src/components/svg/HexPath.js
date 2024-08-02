@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useHexedCanvasContext } from "./HexedCanvas";
 
 const verticies = 6;
-const angleMultiplier = 2 * Math.PI / verticies;
+const angleMultiplier = (2 * Math.PI) / verticies;
 
 const HexPath = ({
   sitOnSide = true,
@@ -11,6 +12,14 @@ const HexPath = ({
   hoverFill = fill,
   ...props
 }) => {
+  const context = useHexedCanvasContext();
+  if (!center) {
+    center = { x: 0.5 * context.width, y: 0.5 * context.height };
+  }
+  if (!radius) {
+    radius = context.radius;
+  }
+
   const [hover, setHover] = useState(false);
   const hoverHandler = () => {
     setHover((hover) => !hover, []);

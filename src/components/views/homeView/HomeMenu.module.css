@@ -1,6 +1,6 @@
 .total {
-  max-width: 600px;
-  margin: 80px auto;
+  max-width: 500px;
+  margin: 60px auto;
   padding: 4rem 0.5rem;
   background: rgba(230, 230, 255, 0.3);
   backdrop-filter: blur(10px);
@@ -11,7 +11,7 @@
 }
 
 .main {
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
@@ -21,7 +21,7 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 4rem;
   text-shadow: -1px 1px 0 hsl(239, 96%, 80%), 1px 1px 0 hsl(239, 96%, 80%),
-  1px -1px 0 hsl(239, 96%, 80%), -1px -1px 0 hsl(239, 96%, 80%);
+    1px -1px 0 hsl(239, 96%, 80%), -1px -1px 0 hsl(239, 96%, 80%);
 }
 
 .warning {

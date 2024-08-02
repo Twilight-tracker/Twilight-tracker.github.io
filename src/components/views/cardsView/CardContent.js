@@ -1,4 +1,6 @@
 import classes from "./CardContent.module.css";
+import CardContentDescription from "./CardContentDescription";
+import CardContentTitle from "./CardContentTitle";
 
 const phases = {
   status: { value: "Фаза статуса", color: "" },
@@ -25,14 +27,14 @@ const CardContent = ({ className, card }) => {
   return (
     <div className={className}>
       <div className={classes.content}>
-        <div className={classes.title}>{card.title.value}</div>
+        <CardContentTitle className={classes.title}>
+          {card.title.value}
+        </CardContentTitle>
         <div className={classes.phase}>{phases[card.phase].value}</div>
-        <div className={classes.descriptionBlock}>
-          <div className={classes.description}>{card.description.value}</div>
-          {card.extra && (
-            <div className={classes.extra}>{card.extra.value}</div>
-          )}
-        </div>
+        <CardContentDescription
+          className={classes.description}
+          card={card}
+        ></CardContentDescription>
         <div className={classes.points}>{stage.points}</div>
         <div className={classes.pointsLabel}>{stage.label}</div>
         {expansion?.label && (

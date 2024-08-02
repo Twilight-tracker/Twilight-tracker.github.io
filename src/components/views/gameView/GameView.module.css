@@ -1,12 +1,33 @@
 .main {
-  display: flex;
-  gap: 20px;
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(400px, 1fr) minmax(630px, 1fr);
+
+  height: 100vh;
+  max-height: 100vh;
   padding: 10px;
+  overflow-y: hidden;
 }
 
-.leftColumn {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.magnifier {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.pointCounter {
+  width: 400px;
+  margin-left: 375px;
+  -webkit-user-select: none;
+  user-select: none;
+  align-self: end;
+  transform: translateY(50px);
+}
+
+.menu {
+  position: absolute;
+  width: 300px;
+  right: 0;
 }

@@ -1,17 +1,22 @@
 import { useState } from "react";
+import classNames from "classnames";
 import LinkButton from "../../ui/LinkButton";
 import classes from "./GameMenu.module.css";
 import buttons from "../../ui/buttons.module.css";
 
-const GameMenu = () => {
+const GameMenu = ({ className }) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const toggleShowMenu = () => {
-    setShowMenu((value) => !value);
-  };
+  const toggleClass = classNames(classes.showMenu, {
+    [buttons.blue_active]: showMenu,
+    [buttons.blue]: !showMenu,
+  });
 
   return (
-    <section className={classes.total}>
+    <section className={classNames(className, classes.total)}>
+      <div className={toggleClass} onClick={() => setShowMenu((val) => !val)}>
+        Меню
+      </div>
       {showMenu && (
         <div className={classes.main}>
           <LinkButton to="/newGame">Начать новую игру</LinkButton>
@@ -19,15 +24,6 @@ const GameMenu = () => {
           <LinkButton to="/">Вернуться на главную</LinkButton>
         </div>
       )}
-      <div
-        className={[
-          classes.showMenu,
-          showMenu ? buttons.blue_active : buttons.blue,
-        ].join(" ")}
-        onClick={toggleShowMenu}
-      >
-        Меню
-      </div>
     </section>
   );
 };

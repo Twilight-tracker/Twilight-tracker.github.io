@@ -1,15 +1,12 @@
 import { useStorage } from "../../hooks/useStorage";
-import SvgCanvas from "../svg/SvgCanvas";
-import HexPath from "../svg/HexPath";
-import FlowerPath from "../svg/FlowerPath";
-import PlusPath from "../svg/PlusPath";
-import { baseParameters } from "../svg/constants";
+import HexedCanvas from "../svg/HexedCanvas";
+import { hexBase } from "../svg/constants";
 import colors from "../../data/colors.json";
 
 import classes from "./InactiveFlower.module.css";
 
 const InactiveFlower = ({ cardIndex, onSelectCard }) => {
-  const [storage, dispatch] = useStorage();
+  const { storage } = useStorage();
   const points = storage.gameState.objectives[cardIndex].points;
   const petals = storage.gameSettings.colors;
   const petalProps = petals.map((petal, index) => {
@@ -24,30 +21,24 @@ const InactiveFlower = ({ cardIndex, onSelectCard }) => {
   const hexClickHandler = () => {
     onSelectCard(cardIndex);
   };
-  
+
   return (
     <div className={classes.main}>
-      <SvgCanvas viewbox="0 0 520 600">
-        <HexPath
-          className={classes.hex}
-          onClick={hexClickHandler}
-          {...baseParameters}
-          fill="#3f3f3f"
-          />
-        <PlusPath
-          className={classes.clickable}
-          onClick={hexClickHandler}
-          fill={cardIndex < 5 ? "goldenrod" : "#6060f0"}
-          {...baseParameters}
-        />
-        <FlowerPath
+      <HexedCanvas hexBase={hexBase}>
+        <HexedCanvas.Flower
           petalProps={petalProps}
           className={classes.flower}
-          // className={classes.clickable}
-          {...baseParameters}
-          // onClick={petalClickHandler}
         />
-      </SvgCanvas>
+        <HexedCanvas.Hex
+          className={classes.hex}
+          onClick={hexClickHandler}
+          fill="rgba(64, 64, 80, 0.85)"
+          hoverFill="rgba(64, 64, 128, 0.85)"
+        />
+        <HexedCanvas.Plus
+          fill={cardIndex < 5 ? "goldenrod" : "#6060f0"}
+        />
+      </HexedCanvas>
     </div>
   );
 };

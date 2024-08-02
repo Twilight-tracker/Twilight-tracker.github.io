@@ -1,0 +1,210 @@
+{
+  "_unknown": {
+    "id": "_unknown",
+    "name": {
+      "src": "Unknown Faction",
+      "value": "Неизвесная фракция"
+    },
+    "expansion": "main"
+  },
+  "arborec": {
+    "id": "arborec",
+    "name": {
+      "src": "The Arborec",
+      "value": "Арборек"
+    },
+    "expansion": "main"
+  },
+  "argent": {
+    "id": "argent",
+    "name": {
+      "src": "The Argent Flight",
+      "value": "Серебряная Стая"
+    },
+    "expansion": "pok"
+  },
+  "barony": {
+    "id": "barony",
+    "name": {
+      "src": "The Barony of Letnev",
+      "value": "Баронат Летнев"
+    },
+    "expansion": "main"
+  },
+  "cabal": {
+    "id": "cabal",
+    "name": {
+      "src": "The Vuil'Raith Cabal",
+      "value": "Кабал Вуил'райт"
+    },
+    "expansion": "pok"
+  },
+  "empyrean": {
+    "id": "empyrean",
+    "name": {
+      "src": "The Empyrean",
+      "value": "Возвышенные"
+    },
+    "expansion": "pok"
+  },
+  "ghosts": {
+    "id": "ghosts",
+    "name": {
+      "src": "The Ghosts of Creuss",
+      "value": "Призраки Креусса"
+    },
+    "expansion": "main"
+  },
+  "hacan": {
+    "id": "hacan",
+    "name": {
+      "src": "The Emirates of Hacan",
+      "value": "Хаканские Эмираты"
+    },
+    "expansion": "main"
+  },
+  "jolnar": {
+    "id": "jolnar",
+    "name": {
+      "src": "The Universities of Jol-Nar",
+      "value": "Жол-Нарские Университеты"
+    },
+    "expansion": "main"
+  },
+  "keleres": {
+    "id": "keleres",
+    "name": {
+      "src": "The Council Keleres",
+      "value": "Келеры Совета"
+    },
+    "expansion": "codex"
+  },
+  "l1z1x": {
+    "id": "l1z1x",
+    "name": {
+      "src": "The L1Z1X Mindset",
+      "value": "Психосеть Л1З1КС"
+    },
+    "expansion": "main"
+  },
+  "mahact": {
+    "id": "mahact",
+    "name": {
+      "src": "The Mahact Gene-Sorcerers",
+      "value": "Генные чародеи Мэхакт"
+    },
+    "expansion": "pok"
+  },
+  "mentak": {
+    "id": "mentak",
+    "name": {
+      "src": "The Mentak Coalition",
+      "value": "Коалиция Ментака"
+    },
+    "expansion": "main"
+  },
+  "muaat": {
+    "id": "muaat",
+    "name": {
+      "src": "The Embers of Muaat",
+      "value": "Тлеющие с\u00A0Муаата"
+    },
+    "expansion": "main"
+  },
+  "naalu": {
+    "id": "naalu",
+    "name": {
+      "src": "The Naalu Collective",
+      "value": "Клубок Наалу"
+    },
+    "expansion": "main"
+  },
+  "naazrokha": {
+    "id": "naazrokha",
+    "name": {
+      "src": "The Naaz-Rokha Alliance",
+      "value": "Альянс Нааз\u2011Роха"
+    },
+    "expansion": "pok"
+  },
+  "nekro": {
+    "id": "nekro",
+    "name": {
+      "src": "The Nekro Virus",
+      "value": "Некровирус"
+    },
+    "expansion": "main"
+  },
+  "nomad": {
+    "id": "nomad",
+    "name": {
+      "src": "The Nomad",
+      "value": "Кочевник"
+    },
+    "expansion": "pok"
+  },
+  "saar": {
+    "id": "saar",
+    "name": {
+      "src": "The Clan of Saar",
+      "value": "Клан Сааров"
+    },
+    "expansion": "main"
+  },
+  "sardakk": {
+    "id": "sardakk",
+    "name": {
+      "src": "Sardakk N'orr",
+      "value": "Сардак Н'орр"
+    },
+    "expansion": "main"
+  },
+  "sol": {
+    "id": "sol",
+    "name": {
+      "src": "The Federation of Sol",
+      "value": "Федерация Сол"
+    },
+    "expansion": "main"
+  },
+  "titans": {
+    "id": "titans",
+    "name": {
+      "src": "The Titans of Ul",
+      "value": "Титаны Ула"
+    },
+    "expansion": "pok"
+  },
+  "winnu": {
+    "id": "winnu",
+    "name": {
+      "src": "The Winnu",
+      "value": "Винну"
+    },
+    "expansion": "main"
+  },
+  "xxcha": {
+    "id": "xxcha",
+    "name": {
+      "src": "The Xxcha Kingdom",
+      "value": "Королевство Ззча"
+    },
+    "expansion": "main"
+  },
+  "yin": {
+    "id": "yin",
+    "name": {
+      "src": "The Yin Brotherhood",
+      "value": "Братство Инь"
+    },
+    "expansion": "main"
+  },
+  "yssaril": {
+    "id": "yssaril",
+    "name": {
+      "src": "The Yssaril Tribes",
+      "value": "Племена Иссарилов"
+    },
+    "expansion": "main"
+  }
+}

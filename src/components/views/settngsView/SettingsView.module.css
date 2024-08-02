@@ -1,34 +1,28 @@
 .main {
-  width: 100vw;
+  width: calc(100vw - 20px);
   height: 100vh;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .main a {
   text-decoration: none;
 }
 
-.title {
-  color: hsl(197, 50%, 10%);
-  text-shadow: -1px 1px 0 hsl(239, 96%, 90%), 1px 1px 0 hsl(239, 96%, 90%),
-    1px -1px 0 hsl(239, 96%, 90%), -1px -1px 0 hsl(239, 96%, 90%);
-  margin: 0;
-  padding-top: 30px;
-  -webkit-user-select: none;
-  user-select: none;
+.colorPicker {
+  width: 70%;
+  margin: 0 auto;
 }
 
-.label {
-  color: whitesmoke;
-  font-size: 1.5rem;
-}
-
-.italic {
-  font-style: italic;
-  color: yellow;
-}
-
-.buttons {
-  max-width: 400px;
-  margin: 15px auto;
+.factions {
+  --item-width: 175px;
+  padding: 10px 30px 50px;
+  gap: 2px;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }

@@ -1,4 +1,5 @@
 import { useFilter } from "../../../hooks/useFilter";
+import { useOverlayContext } from "../../ui/Overlay";
 import FilterSection from "./FilterSection";
 import CardTable from "./CardTable";
 import LinkButton from "../../ui/LinkButton";
@@ -8,8 +9,8 @@ import classes from "./CardsView.module.css";
 
 const CardsView = ({ onPage, filters: initialFilters, ...props }) => {
   const [filters, handler] = useFilter(initialFilters);
+  const overlayProps = useOverlayContext();
 
-  const sectionProps = onPage ? {} : { id: "scrollable-container" };
   const scrollProps = onPage ? {} : { containerId: "scrollable-container" };
   return (
     <section className={classes.main}>
@@ -19,7 +20,7 @@ const CardsView = ({ onPage, filters: initialFilters, ...props }) => {
         </div>
       )}
       <FilterSection filters={filters} handler={handler} />
-      <CardTable filters={filters} {...props} />
+      <CardTable filters={filters} {...props} {...overlayProps}/>
       <ScrollToTop {...scrollProps} />
     </section>
   );

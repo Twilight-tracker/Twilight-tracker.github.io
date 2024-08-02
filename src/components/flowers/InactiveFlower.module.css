@@ -1,8 +1,8 @@
 .main {
   position: relative;
   display: inline-block;
-  margin: 0;
-  width: 270px;
+  margin: 0 -25px;
+  width: 340px;
   vertical-align: top;
   text-align: center;
   box-sizing: border-box;
@@ -10,13 +10,10 @@
 
 .hex {
   cursor: pointer;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  pointer-events: fill;
 }
 
 .flower {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); 
-}
-
-.clickable {
-  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  pointer-events: fill;
 }

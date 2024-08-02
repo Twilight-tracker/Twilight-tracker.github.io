@@ -1,1 +1,1 @@
-export const baseParameters = { center: { x: 260, y: 300 }, radius: 200 };
+export const hexBase = { width: 520, height: 600, radius: 200 };

@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useHexedCanvasContext } from "./HexedCanvas";
+import { useButtonContext } from "../ui/Button";
 
 const innerMult = 0.08;
 const outerMult = 0.8;
 const dataAngles = [-Math.PI / 3, 0, Math.PI / 3];
 
 const LeafPath = ({
-  center,
-  radius,
   leafType,
   fill = "#000080",
   hoverFill = fill,
   ...props
 }) => {
+  const { width, height, radius } = useHexedCanvasContext();
+  const center = { x: 0.5 * width, y: 0.5 * height };
+
+  const buttonProps = useButtonContext();
+
   const [hover, setHover] = useState(false);
   const hoverHandler = () => {
     setHover((hover) => !hover, []);
@@ -43,6 +48,7 @@ const LeafPath = ({
   return (
     <path
       {...props}
+      {...buttonProps}
       onMouseOver={hoverHandler}
       onMouseOut={hoverHandler}
       fill={hover ? hoverFill : fill}

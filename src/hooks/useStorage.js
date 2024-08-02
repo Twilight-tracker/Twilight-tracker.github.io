@@ -21,7 +21,7 @@ export const useStorage = (shouldListen = true) => {
     };
   }, [setState, shouldListen]);
 
-  return [globalState, dispatch];
+  return { storage: globalState, dispatch };
 };
 
 export const initStorage = (userActions, initialState) => {

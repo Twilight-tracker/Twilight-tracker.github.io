@@ -1,3 +1,5 @@
+import { useHexedCanvasContext } from "./HexedCanvas";
+
 const dataPoints = [
   [-1, -1],
   [-1, -10],
@@ -14,7 +16,9 @@ const dataPoints = [
 ];
 const mult = 0.035;
 
-const PlusPath = ({ center, radius, fill = "whitesmoke", ...props }) => {
+const PlusPath = ({ fill = "whitesmoke", ...props }) => {
+  const { width, height, radius } = useHexedCanvasContext();
+  const center = { x: 0.5 * width, y: 0.5 * height };
   const path = dataPoints
     .map(
       ([x, y]) =>
