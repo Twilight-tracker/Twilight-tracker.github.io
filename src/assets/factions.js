@@ -23,11 +23,11 @@ import winnuImage from "./factions/winnu.png";
 import xxchaImage from "./factions/xxcha.png";
 import yinImage from "./factions/yin.png";
 import yssarilImage from "./factions/yssaril.png";
-import _unknownImage from "./factions/_unknown.png";
+import unknownImage from "./factions/unknown.png";
 
 export const factionsAssets = {
   _unknown: {
-    src: _unknownImage,
+    src: unknownImage,
     alt: "unknown",
   },
   arborec: {
