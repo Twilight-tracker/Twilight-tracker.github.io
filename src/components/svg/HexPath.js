@@ -1,17 +1,9 @@
-import { useState } from "react";
 import { useHexedCanvasContext } from "./HexedCanvas";
 
 const verticies = 6;
 const angleMultiplier = (2 * Math.PI) / verticies;
 
-const HexPath = ({
-  sitOnSide = true,
-  center,
-  radius,
-  fill,
-  hoverFill = fill,
-  ...props
-}) => {
+const HexPath = ({ className, sitOnSide = true, center, radius, ...props }) => {
   const context = useHexedCanvasContext();
   if (!center) {
     center = { x: 0.5 * context.width, y: 0.5 * context.height };
@@ -20,10 +12,6 @@ const HexPath = ({
     radius = context.radius;
   }
 
-  const [hover, setHover] = useState(false);
-  const hoverHandler = () => {
-    setHover((hover) => !hover, []);
-  };
   const sideAngle = sitOnSide ? 0 : 0.5;
   const path = [...Array(verticies).keys()]
     .map(
@@ -32,15 +20,7 @@ const HexPath = ({
           ${center.y + radius * Math.sin(angleMultiplier * (x + sideAngle))}`
     )
     .join(" ");
-  return (
-    <path
-      {...props}
-      fill={hover ? hoverFill : fill}
-      onMouseOver={hoverHandler}
-      onMouseOut={hoverHandler}
-      d={`M${path}z`}
-    />
-  );
+  return <path className={className} d={`M${path}z`} {...props} />;
 };
 
 export default HexPath;

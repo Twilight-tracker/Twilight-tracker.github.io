@@ -6,19 +6,17 @@ import HexedCanvas from "../../svg/HexedCanvas";
 import { factionsAssets } from "../../../assets/factions";
 import colors from "../../../data/colors.json";
 import classes from "./FactionPicker.module.css";
+import colorClasses from "../../../data/colors.module.css";
 
 const cx = classNames.bind(classes);
 
 const WheelContext = createContext();
-
-export const useWheelContext = () => {
-  return useContext(WheelContext);
-};
+export const useWheelContext = () => useContext(WheelContext);
 
 const FactionPicker = () => {
   const [colorActivated, setColorActivated] = useState(-1);
   const context = { colorActivated, setColorActivated };
-  
+
   const { storage, dispatch } = useStorage();
   const { colors: colorHexes, factions } = storage.gameSettings;
   const { playerActivated, setPlayerActivated } = useSettingsContext();
@@ -31,17 +29,13 @@ const FactionPicker = () => {
 
   const clickHandler = (event) => {
     const newValue = Number(event.target.id);
-    setPlayerActivated((value) => {
-      return value === newValue ? -1 : newValue;
-    }, []);
+    setPlayerActivated((value) => (value === newValue ? -1 : newValue), []);
     event.preventDefault();
   };
 
   const colorActivateHandler = (event) => {
     const newValue = Number(event.target.id);
-    setColorActivated((value) => {
-      return value === newValue ? -1 : newValue;
-    }, []);
+    setColorActivated((value) => (value === newValue ? -1 : newValue), []);
     event.preventDefault();
   };
 
@@ -64,7 +58,7 @@ const FactionPicker = () => {
           {[...Array(6).keys()].map((index) => {
             const factionId = factions[index].factionId;
             const colorId = colorHexes[index].colorId;
-            const color = colors[colorId];
+            const hexClass = cx({ hex: true, [colorClasses[colorId]]: true });
             return (
               <div className={classes.container} key={index}>
                 <img
@@ -76,9 +70,7 @@ const FactionPicker = () => {
                 <HexedCanvas className={canvasClass(index)} hexBase={hexBase}>
                   <HexedCanvas.Hex
                     id={index}
-                    className={classes.hex}
-                    fill={color.color}
-                    hoverFill={color.hoverColor}
+                    className={hexClass}
                     stroke={index === colorActivated ? "red" : "whitesmoke"}
                     onClick={colorActivateHandler}
                   />

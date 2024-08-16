@@ -6,10 +6,7 @@ import SettingsMenu from "./SettingsMenu";
 import classes from "./SettingsView.module.css";
 
 const SettingsContext = createContext();
-
-export const useSettingsContext = () => {
-  return useContext(SettingsContext);
-};
+export const useSettingsContext = () => useContext(SettingsContext);
 
 const SettingsView = () => {
   const { dispatch } = useStorage();

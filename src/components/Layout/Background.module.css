@@ -10,12 +10,13 @@
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url("../../assets/spaceBackground.jpg");
-  background-size: auto 145%;
+  z-index: -1;
+
+  /* background-color: black; */
+  background-image: url("../../assets/pexels-kaip-1341279.jpg");
+  background-size: cover;
   background-position: 0%;
   background-attachment: fixed;
-  background-color: black;
-  z-index: -1;
 }
 
 .attribution {
@@ -24,4 +25,79 @@
   bottom: 10px;
   font-size: 0.8rem;
   color: #2c75be;
+}
+
+.gradient {
+  border-image: fill 1
+    linear-gradient(
+      to left,
+      hsl(from var(--color) h s l / var(--gradient-opacity)) 0%,
+      rgba(0, 0, 0, 0) 90%
+    );
+}
+
+.gradientEnter {
+  animation: gradientEnter 0.5s ease-in-out forwards;
+}
+
+.gradientExit {
+  animation: gradientExit 0.5s ease-in-out forwards;
+}
+
+.faction {
+  position: absolute;
+  width: 40%;
+  bottom: 15%;
+  left: 65%;
+  mask-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.9) 10%, transparent 90%);
+}
+
+.factionEnter {
+  animation: factionEnter 0.5s ease-in-out forwards;
+}
+
+.factionExit {
+  animation: factionExit 0.5s ease-in-out forwards;
+}
+
+@keyframes factionEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes factionExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@property --gradient-opacity {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes gradientEnter {
+  from {
+    --gradient-opacity: 0;
+  }
+  to {
+    --gradient-opacity: 0.8;
+  }
+}
+
+@keyframes gradientExit {
+  from {
+    --gradient-opacity: 0.8;
+  }
+  to {
+    --gradient-opacity: 0;
+  }
 }

@@ -3,18 +3,13 @@ import HexedCanvas from "../../svg/HexedCanvas";
 import CardContent from "./CardContent";
 import objectives from "../../../data/objectives.json";
 import classes from "./HexCard.module.css";
+import colors from "../../../data/colors.module.css";
 
 const cx = classNames.bind(classes);
 
-const stages = {
-  stage1: { points: 1, color: "goldenrod", label: "очко" },
-  stage2: { points: 2, color: "blue", label: "очка" },
-  secret: { points: 1, color: "red", label: "очко" },
-};
-
-const HexCard = ({ cardId, onConfirm }) => {
+const HexCard = ({ cardId, onConfirm, colorId }) => {
   const card = objectives[cardId];
-  const stage = stages[card.stage];
+  const stage = card.stage;
 
   const clickHandler = () => {
     if (onConfirm) {
@@ -22,23 +17,36 @@ const HexCard = ({ cardId, onConfirm }) => {
     }
   };
 
+  const mainClass = cx({
+    main: true,
+    [colors[colorId]]: colorId,
+  })
+
   const hexClass = cx({
     hex: true,
+    [`${stage}-fill`]: !colorId,
+    colorFill: colorId,
+    [`${stage}-stroke`]: true,
     pointer: onConfirm,
+  });
+
+  const contentClass = cx({
+    content: true,
+    defaultContent: !colorId,
+    coloredContent: colorId
   });
 
   const hexBase = { width: 610, height: 530, radius: 300 };
 
   return (
-    <div className={classes.main}>
+    <div className={mainClass}>
       <HexedCanvas className={classes.canvas} hexBase={hexBase}>
         <HexedCanvas.Hex
           className={hexClass}
-          stroke={stage.color}
           onClick={clickHandler}
         />
       </HexedCanvas>
-      <CardContent className={classes.content} card={card} />
+      <CardContent className={contentClass} card={card} />
     </div>
   );
 };

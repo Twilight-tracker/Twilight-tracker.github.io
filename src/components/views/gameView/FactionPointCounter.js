@@ -4,11 +4,12 @@ import HexedCanvas from "../../svg/HexedCanvas";
 import colors from "../../../data/colors.json";
 import { factionsAssets } from "../../../assets/factions";
 import classes from "./FactionPointCounter.module.css";
+import Clock from "./Clock";
 
 const FactionPointCounter = ({ className }) => {
   const { storage } = useStorage();
   const { colors: colorHexes, factions } = storage.gameSettings;
-  const totalPoints = useTotalPoints();
+  const { totalPoints } = useTotalPoints();
 
   const hexBase = { width: 52, height: 60, radius: 20 };
 
@@ -43,6 +44,7 @@ const FactionPointCounter = ({ className }) => {
             </div>
           );
         })}
+      <Clock className={classes.clock} />
       </div>
     </div>
   );

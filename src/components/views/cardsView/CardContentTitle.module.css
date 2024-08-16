@@ -5,22 +5,22 @@
 .title::before {
   content: "";
   height: 100%;
-  width: calc(sqrt(3) / 6 * var(--base-height));
+  width: calc(sqrt(3) / 6 * var(--_content-base-height));
   float: right;
   shape-outside: polygon(0 0, 100% 0, 100% 100%, 60% 100%);
 }
 
 .shape {
-  width: calc(sqrt(3) / 6 * var(--base-height));
+  width: calc(sqrt(3) / 6 * var(--_content-base-height));
   height: 100%;
   float: left;
   shape-outside: polygon(0 0, 100% 0, 40% 100%, 0 100%);
 }
 
 .children {
-  padding-block: 0.5rem;
+  padding-block: 0.5em;
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   line-height: 1;
   letter-spacing: -0.8px;
   text-transform: uppercase;

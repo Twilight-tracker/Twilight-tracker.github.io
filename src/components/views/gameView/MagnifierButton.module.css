@@ -1,15 +1,29 @@
-.button {
-  border: 1px solid black;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+.canvas {
+  height: 80px;
+  pointer-events: none;
+}
+
+.hex {
+  stroke: whitesmoke;
+  stroke-width: 10px;
   cursor: pointer;
+  pointer-events: fill;
 }
 
 .active {
-  background: #11b003;
+  fill: hsl(115, 97%, 35%);
+  &:hover {
+    fill: hsl(115, 97%, 45%);
+  }
 }
 
 .inactive {
-  background: #0307e2;
+  fill: hsl(240, 33%, 38%);
+  &:hover {
+    fill: hsl(240, 33%, 48%);
+  }
+}
+
+.magnifier {
+  stroke: whitesmoke;
 }

@@ -4,7 +4,7 @@ import classes from "./ScrollToTop.module.css";
 
 const ScrollToTop = ({ containerId }) => {
   const [showButton, scrollMethod] = useScrollToTop({
-    containerId: containerId,
+    containerId: `scrollable-container-${containerId}`,
     behavior: "smooth",
   });
 

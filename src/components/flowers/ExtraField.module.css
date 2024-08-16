@@ -1,22 +1,26 @@
 .container {
   position: relative;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .input {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(calc(-50% - 2px));
   display: inline-block;
-  width: 60px;
-  height: 75px;
+  width: 45px;
+  height: 52px;
   text-align: center;
   background-color: transparent;
   border: none;
   color: black;
-  font-size: 2.9rem;
-  line-height: 75px;
+  font-size: 2.2rem;
+  line-height: 52px;
   vertical-align: middle;
+  letter-spacing: -4px;
 
   &:focus {
     outline: none;
@@ -30,5 +34,6 @@
 }
 
 .hex {
+  fill: whitesmoke;
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }

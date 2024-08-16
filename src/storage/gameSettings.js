@@ -20,21 +20,11 @@ const defaults = {
   factions: structuredClone(defaultFactions),
 };
 
-const validatePosition = (position) => {
-  return position >= 0 && position < colorCount;
-};
-
-const validateColor = (colorId) => {
-  return Object.keys(colors).includes(colorId);
-};
-
-const validateFaction = (factionId) => {
-  return Object.keys(factions).includes(factionId);
-};
-
-const validatePoints = (points) => {
-  return pointOptions.includes(points);
-};
+const validatePosition = (position) => position >= 0 && position < colorCount;
+const validateColor = (colorId) => Object.keys(colors).includes(colorId);
+const validateFaction = (factionId) =>
+  Object.keys(factions).includes(factionId);
+const validatePoints = (points) => pointOptions.includes(points);
 
 export const actions = {
   SET_COLOR: (currentState, { position, colorId }) => {

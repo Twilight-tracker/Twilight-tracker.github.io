@@ -1,24 +1,21 @@
 import PetalPath from "../svg/PetalPath";
 
-const FlowerPath = ({ petalProps, onPetalClick, ...props }) => {
-  const onClickProps = onPetalClick
-    ? (index) => ({
-        onClick: () => {
-          onPetalClick(index);
-        },
-      })
-    : (_) => {};
+const FlowerPath = ({
+  petalClasses,
+  petalClickHandlers,
+  ...props
+}) => {
   return (
     <>
-      {petalProps.map((petal, index) => {
+      {[...Array(6).keys()].map((index) => {
         return (
           <PetalPath
             key={index}
+            className={petalClasses[index]}
             id={index}
             playerIndex={index}
-            {...onClickProps(index)}
+            onClick={petalClickHandlers?.[index]}
             {...props}
-            {...petal}
           />
         );
       })}

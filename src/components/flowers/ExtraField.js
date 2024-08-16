@@ -5,10 +5,9 @@ import { useStorage } from "../../hooks/useStorage";
 import Button from "../ui/Button";
 import HexedCanvas from "../svg/HexedCanvas";
 import colors from "../../data/colors.json";
-import { hexBase } from "../svg/constants";
 import classes from "./ExtraField.module.css";
 
-const ExtraField = ({ playerIndex, ...props }) => {
+const ExtraField = ({ className, playerIndex, ...props }) => {
   const { storage, dispatch } = useStorage();
   const colorId = storage.gameSettings.colors[playerIndex].colorId;
   const color = colors[colorId];
@@ -26,13 +25,13 @@ const ExtraField = ({ playerIndex, ...props }) => {
   const { groupProps, inputProps, incrementButtonProps, decrementButtonProps } =
     useNumberField({ ...props, value, onChange }, state, inputRef);
 
-  const resizedBase = { ...hexBase, width: 800, height: 400 };
+  const resizedBase = { width: 800, height: 400, radius: 200 };
 
   return (
-    <div className={classes.container} {...groupProps}>
+    <div className={[className, classes.container].join(" ")} {...groupProps}>
       <input className={classes.input} {...inputProps} ref={inputRef} />
       <HexedCanvas className={classes.svg} hexBase={resizedBase}>
-        <HexedCanvas.Hex className={classes.hex} fill="whitesmoke" />
+        <HexedCanvas.Hex className={classes.hex} />
         <Button {...decrementButtonProps}>
           <HexedCanvas.Leaf
             className={classes.button}

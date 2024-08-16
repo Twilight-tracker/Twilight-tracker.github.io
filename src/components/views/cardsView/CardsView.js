@@ -7,11 +7,11 @@ import ScrollToTop from "../../Layout/ScrollToTop";
 
 import classes from "./CardsView.module.css";
 
-const CardsView = ({ onPage, filters: initialFilters, ...props }) => {
+const CardsView = ({ onPage, filters: initialFilters }) => {
   const [filters, handler] = useFilter(initialFilters);
   const overlayProps = useOverlayContext();
 
-  const scrollProps = onPage ? {} : { containerId: "scrollable-container" };
+  const scrollProps = onPage ? {} : { containerId: "cards" };
   return (
     <section className={classes.main}>
       {onPage && (
@@ -20,7 +20,7 @@ const CardsView = ({ onPage, filters: initialFilters, ...props }) => {
         </div>
       )}
       <FilterSection filters={filters} handler={handler} />
-      <CardTable filters={filters} {...props} {...overlayProps}/>
+      <CardTable filters={filters} {...overlayProps}/>
       <ScrollToTop {...scrollProps} />
     </section>
   );

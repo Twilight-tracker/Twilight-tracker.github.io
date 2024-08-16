@@ -5,6 +5,10 @@ import FlowerPath from "./FlowerPath";
 import LeafPath from "./LeafPath";
 import ColorHexes from "./ColorHexes";
 import PlusPath from "./PlusPath";
+import CheckPath from "./CheckPath";
+import MagnifierPath from "./MagnifierPath";
+import BurgerPath from "./BurgerPath";
+import SecretPath from "./SecretPath";
 
 const HexedCanvasContext = createContext();
 
@@ -12,7 +16,7 @@ export const useHexedCanvasContext = () => {
   const context = useContext(HexedCanvasContext);
   if (!context) {
     throw Error(
-      "HexedCanvas-related components must be wrapped with <HexCanvas>."
+      "HexedCanvas-related components must be wrapped with <HexedCanvas>."
     );
   }
   return context;
@@ -42,5 +46,9 @@ HexedCanvas.Flower = FlowerPath;
 HexedCanvas.Leaf = LeafPath;
 HexedCanvas.ColorHexes = ColorHexes;
 HexedCanvas.Plus = PlusPath;
+HexedCanvas.Check = CheckPath;
+HexedCanvas.Magnifier = MagnifierPath;
+HexedCanvas.Burger = BurgerPath;
+HexedCanvas.Secret = SecretPath;
 
 export default HexedCanvas;

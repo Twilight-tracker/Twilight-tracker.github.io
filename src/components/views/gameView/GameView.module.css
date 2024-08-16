@@ -9,25 +9,43 @@
   overflow-y: hidden;
 }
 
+.menu {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  bottom: 25px;
+  left: 10px;
+}
+
 .magnifier {
   position: absolute;
   width: 54px;
   height: 54px;
-  bottom: 10px;
+  bottom: 85px;
   left: 10px;
 }
 
+.secrets {
+  position: absolute;
+  top: 10px;
+  left: 450px;
+}
+
 .pointCounter {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
   width: 400px;
-  margin-left: 375px;
+  padding-left: 34px;
   -webkit-user-select: none;
   user-select: none;
   align-self: end;
-  transform: translateY(50px);
+  transform: translateY(10px);
 }
 
-.menu {
+.objectives {
   position: absolute;
-  width: 300px;
-  right: 0;
+  bottom: 10px;
+  left: 0;
 }

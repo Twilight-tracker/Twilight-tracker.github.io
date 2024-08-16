@@ -69,7 +69,6 @@ const ColorHexes = ({
             }}
             radius={0.3 * radius}
             fill={color.color}
-            hoverFill={color.hoverColor}
           />
         );
       })}

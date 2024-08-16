@@ -18,10 +18,45 @@
   top: 0;
   margin: 0;
   padding: 4px 8px;
-  --base-height: 216px;
+  --content-base-height: 216px;
 }
 
 .hex {
-  fill: rgb(64, 64, 128);
   stroke-width: 5px;
+}
+
+.stage1-fill {
+  fill: hsl(34, 86%, 20%);
+}
+
+.stage2-fill {
+  fill: hsl(240, 33%, 38%);
+}
+
+.secret-fill {
+  fill: hsl(0, 60%, 20%);
+}
+
+.stage1-stroke {
+  stroke: hsl(43, 74%, 49%);
+}
+
+.stage2-stroke {
+  stroke: hsl(240, 100%, 40%);
+}
+
+.secret-stroke {
+  stroke: hsl(0, 80%, 40%);
+}
+
+.colorFill {
+  fill: var(--color);
+}
+
+.defaultContent {
+  color: white;
+}
+
+.coloredContent {
+  color: var(--textColor, white);
 }

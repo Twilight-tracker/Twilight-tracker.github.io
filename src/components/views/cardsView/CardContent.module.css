@@ -1,46 +1,67 @@
 .content {
+  --_content-base-height: var(--content-base-height);
   position: relative;
-  width: calc(2 * sqrt(3) / 3 * var(--base-height)); /*  */
-  height: var(--base-height);
-
-  color: white;
+  width: calc(2 * sqrt(3) / 3 * var(--_content-base-height));
+  height: var(--_content-base-height);
+  font-size: calc(var(--_content-base-height) / 221 * 16);
 }
 
 .title {
   height: 30%;
+  font-size: 1.02em;
+  line-height: 0.9;
 }
 
 .phase {
-  height: 7%;
+  height: 5%;
   text-transform: uppercase;
-  font-size: 0.65rem;
+  font-size: 0.6em;
 }
 
 .description {
   height: 50%;
-  padding: 0 12px;
+  padding: 0 calc(var(--_content-base-height) / 221 * 12);
+  font-size: 1.05em;
 }
 
-.points {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.4rem;
-}
-
-.pointsLabel {
+.pointsAtCenter {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.5rem;
+}
+
+.pointsAtLeft {
+  position: absolute;
+  bottom: 0;
+  left: 26%;
+}
+
+.pointsValue {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4em;
+}
+
+.pointsLabel {
+  font-size: 0.5em;
   text-transform: uppercase;
 }
 
 .expansion {
   position: absolute;
   bottom: 0;
-  right: 65px;
-  font-size: 0.7rem;
+  right: 25%;
+  font-size: 0.7em;
+}
+
+.date {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  color: yellow;
 }

@@ -1,29 +1,28 @@
 .value {
-  font-size: 0.9rem;
   line-height: 0.95;
 }
 
 .extra {
-  margin-top: 1rem;
-  font-size: 0.6rem;
-  line-height: 1.2;
+  margin-top: 0.8em;
+  font-size: 0.7em;
+  line-height: 0.95;
 }
 
 .block::before {
   content: "";
   height: 100%;
-  width: calc(sqrt(3) / 6 * var(--base-height));
+  width: calc(sqrt(3) / 6 * var(--_content-base-height));
   float: right;
   shape-outside: polygon(100% 40%, 100% 100%, 40% 100%);
 }
 
 .shape {
-  width: calc(sqrt(3) / 6 * var(--base-height));
+  width: calc(sqrt(3) / 6 * var(--_content-base-height));
   height: 100%;
   float: left;
   shape-outside: polygon(0 40%, 0 100%, 60% 100%);
 }
 
 .inline {
-  padding-block: 0.5rem;
+  padding-block: 0.5em;
 }

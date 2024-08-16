@@ -1,11 +1,17 @@
-import SecretFlower from "../../flowers/SecretFlower";
+import ExtraField from "../../flowers/ExtraField";
 import classes from "./ExtraPoints.module.css";
 
-const ExtraPoints = () => {
+const ExtraPoints = ({className}) => {
   return (
-    <div className={classes.main}>
+    <div className={className}>
       {[...Array(6).keys()].map((index) => (
-        <SecretFlower key={index} playerIndex={index} />
+        <ExtraField
+          className={classes.field}
+          key={index}
+          playerIndex={index}
+          defaultValue={0}
+          aria-label="extra points"
+        />
       ))}
     </div>
   );

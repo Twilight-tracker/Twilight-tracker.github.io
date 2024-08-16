@@ -16,16 +16,21 @@ const dataPoints = [
 ];
 const mult = 0.035;
 
-const PlusPath = ({ fill = "whitesmoke", ...props }) => {
-  const { width, height, radius } = useHexedCanvasContext();
-  const center = { x: 0.5 * width, y: 0.5 * height };
+const PlusPath = ({ className, center, radius, ...props }) => {
+  const context = useHexedCanvasContext();
+  if (!center) {
+    center = { x: 0.5 * context.width, y: 0.5 * context.height };
+  }
+  if (!radius) {
+    radius = context.radius;
+  }
   const path = dataPoints
     .map(
       ([x, y]) =>
         `${center.x + mult * radius * x},${center.y + mult * radius * y}`
     )
     .join(" ");
-  return <path fill={fill} {...props} d={`M${path}z`} />;
+  return <path className={className} d={`M${path}z`} {...props} />;
 };
 
 export default PlusPath;
