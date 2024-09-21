@@ -22,7 +22,7 @@ const data = [
 const FilterSection = ({ filters, handler }) => {
   const getHandler = (name) => () => handler(name);
   return (
-    <section className={classes.main}>
+    <div className={classes.main}>
       {data.map((block, index) => (
         <div key={index} className={classes.block}>
           {block.map(({ name, label }) => (
@@ -36,7 +36,7 @@ const FilterSection = ({ filters, handler }) => {
           ))}
         </div>
       ))}
-    </section>
+    </div>
   );
 };
 

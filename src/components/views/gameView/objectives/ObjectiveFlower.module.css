@@ -1,0 +1,34 @@
+.main {
+  position: relative;
+  display: inline-block;
+  margin: 0 -25px;
+  width: calc(var(--base-height) / 325 * 500);
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+  --_base-height: var(--base-height, 325px);
+}
+
+.icons {
+  position: absolute;
+  top: calc(var(--_base-height) / 325 * (-36));
+  left: 6%;
+}
+
+.content {
+  position: absolute;
+  top: calc(var(--_base-height) / 221 * 80);
+  left: 10%;
+  margin: 0;
+  padding: calc(var(--_base-height) / 221 * 4)
+    calc(var(--_base-height) / 221 * 8);
+  width: 80%;
+  pointer-events: none;
+  --content-base-height: var(--_base-height);
+  color: white;
+}
+
+.magnified:hover {
+  transform: scale(var(--magnified-scale)) translateY(var(--magnified-translateY));
+  z-index: 200;
+}

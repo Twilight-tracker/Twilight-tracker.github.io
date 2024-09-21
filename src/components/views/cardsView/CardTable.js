@@ -9,7 +9,7 @@ const CardTable = ({ filters, onConfirm }) => {
     filters[card.phase] && filters[card.stage] && filters[card.expansion];
 
   return (
-    <section className={classes.main}>
+    <div className={classes.main}>
       {Object.values(objectives)
         .filter(filterFunc)
         .sort(
@@ -21,7 +21,7 @@ const CardTable = ({ filters, onConfirm }) => {
         .map((card) => (
           <HexCard key={card.id} cardId={card.id} onConfirm={onConfirm} />
         ))}
-    </section>
+    </div>
   );
 };
 

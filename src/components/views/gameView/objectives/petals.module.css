@@ -1,0 +1,41 @@
+.onHover {
+  --_onHover-opacity: 0.8;
+
+  &:has(.petalIndex0:hover) {
+    --onHoverIndex0-opacity: var(--_onHover-opacity);
+  }
+  &:has(.petalIndex1:hover) {
+    --onHoverIndex1-opacity: var(--_onHover-opacity);
+  }
+  &:has(.petalIndex2:hover) {
+    --onHoverIndex2-opacity: var(--_onHover-opacity);
+  }
+  &:has(.petalIndex3:hover) {
+    --onHoverIndex3-opacity: var(--_onHover-opacity);
+  }
+  &:has(.petalIndex4:hover) {
+    --onHoverIndex4-opacity: var(--_onHover-opacity);
+  }
+  &:has(.petalIndex5:hover) {
+    --onHoverIndex5-opacity: var(--_onHover-opacity);
+  }
+}
+
+.onHoverIndex0 {
+  opacity: var(--onHoverIndex0-opacity, var(--_unchecked-opacity));
+}
+.onHoverIndex1 {
+  opacity: var(--onHoverIndex1-opacity, var(--_unchecked-opacity));
+}
+.onHoverIndex2 {
+  opacity: var(--onHoverIndex2-opacity, var(--_unchecked-opacity));
+}
+.onHoverIndex3 {
+  opacity: var(--onHoverIndex3-opacity, var(--_unchecked-opacity));
+}
+.onHoverIndex4 {
+  opacity: var(--onHoverIndex4-opacity, var(--_unchecked-opacity));
+}
+.onHoverIndex5 {
+  opacity: var(--onHoverIndex5-opacity, var(--_unchecked-opacity));
+}

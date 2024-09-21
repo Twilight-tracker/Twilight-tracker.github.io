@@ -1,0 +1,22 @@
+.main {
+  margin: 0;
+  pointer-events: none;
+}
+
+.canvas {
+  height: 50px;
+}
+
+.leaf {
+  fill: var(--color);
+  stroke: whitesmoke;
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 20px goldenrod);
+  pointer-events: fill;
+  cursor: pointer;
+  &:hover {
+    fill: var(--hoverColor);
+    stroke: whitesmoke;
+    filter: drop-shadow(0 0 20px gold);
+  }
+}

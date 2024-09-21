@@ -4,7 +4,6 @@ import FilterSection from "./FilterSection";
 import CardTable from "./CardTable";
 import LinkButton from "../../ui/LinkButton";
 import ScrollToTop from "../../Layout/ScrollToTop";
-
 import classes from "./CardsView.module.css";
 
 const CardsView = ({ onPage, filters: initialFilters }) => {
@@ -13,16 +12,16 @@ const CardsView = ({ onPage, filters: initialFilters }) => {
 
   const scrollProps = onPage ? {} : { containerId: "cards" };
   return (
-    <section className={classes.main}>
+    <div className={classes.main}>
       {onPage && (
         <div className={classes.button}>
           <LinkButton to="/">⇐ Назад</LinkButton>
         </div>
       )}
       <FilterSection filters={filters} handler={handler} />
-      <CardTable filters={filters} {...overlayProps}/>
+      <CardTable filters={filters} {...overlayProps} />
       <ScrollToTop {...scrollProps} />
-    </section>
+    </div>
   );
 };
 

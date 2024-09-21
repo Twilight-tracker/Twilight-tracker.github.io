@@ -15,12 +15,11 @@ const dataPoints = [
 
 const adjustFirstPlayerToTop = -2;
 
-const PetalPath = ({ className, sitOnSide = true, playerIndex, ...props }) => {
+const PetalPath = ({ className, playerIndex, ...props }) => {
   const { width, height, radius } = useHexedCanvasContext();
   const center = { x: 0.5 * width, y: 0.5 * height };
-  const sideAngle = sitOnSide ? 0.5 : 0;
   const alpha =
-    ((playerIndex + adjustFirstPlayerToTop + sideAngle) * Math.PI) / 3;
+    (playerIndex + adjustFirstPlayerToTop + 0.5) * Math.PI / 3;
 
   const rotatedPoints = dataPoints.map(({ angles, coef, mult }) => [
     mult *

@@ -1,5 +1,5 @@
 import { useStorage } from "./useStorage";
-import objectives from "../data/objectives.json";
+import objectiveCards from "../data/objectives.json";
 
 const stagePoints = {
   stage1: 1,
@@ -9,23 +9,41 @@ const stagePoints = {
 
 export const useTotalPoints = () => {
   const { storage } = useStorage();
-  const totalPoints = storage.gameState.extraPoints.map(
-    (extra, index) =>
-      extra +
-      storage.gameState.objectives.reduce(
+  const {
+    extraPoints,
+    mecatolPoints,
+    objectives,
+    secrets,
+    relics,
+    throneSupports,
+  } = storage.gameState;
+  const { emphidiaCrown, throneShard } = relics;
+  const { colors, factions } = storage.gameSettings;
+
+  const totalPoints = [...Array(6).keys()].map(
+    (index) =>
+      extraPoints[index] +
+      mecatolPoints[index] +
+      (emphidiaCrown === index ? 1 : 0) +
+      (throneShard === index ? 1 : 0) +
+      objectives.reduce(
         (accumulator, objective) =>
           accumulator +
           (objective.cardId && objective.points[index]
-            ? stagePoints[objectives[objective.cardId].stage]
+            ? stagePoints[objectiveCards[objective.cardId].stage]
             : 0),
         0
       ) +
-      storage.gameState.secrets[index].reduce(
+      secrets[index].reduce(
         (accumulator, secret) =>
           accumulator +
           (secret.taken && secret.cardId
             ? 1 //stagePoints[objectives[secret.cardId].stage]
             : 0),
+        0
+      ) +
+      throneSupports.reduce(
+        (accumulator, receiver) => accumulator + (receiver === index ? 1 : 0),
         0
       )
   );
@@ -42,8 +60,8 @@ export const useTotalPoints = () => {
     ? {
         index: maxIndex,
         points: maxValue,
-        colorId: storage.gameSettings.colors[maxIndex].colorId,
-        factionId: storage.gameSettings.factions[maxIndex].factionId,
+        colorId: colors[maxIndex].colorId,
+        factionId: factions[maxIndex].factionId,
       }
     : { index: -1 };
   return { leader, totalPoints };

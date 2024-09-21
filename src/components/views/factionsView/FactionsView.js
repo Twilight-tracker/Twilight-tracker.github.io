@@ -1,4 +1,4 @@
-import { useSettingsContext } from "../settngsView/SettingsView";
+import { useSettingsContext } from "../settingsView/SettingsView";
 import { factionsAssets } from "../../../assets/factions";
 import factions from "../../../data/factions.json";
 import classNames from "classnames/bind";
@@ -19,7 +19,7 @@ const FactionsView = ({ className }) => {
     setFaction: undefined,
   };
 
-  const imageClass = cx({
+  const portraitClass = cx({
     image: true,
     imageActive: playerActivated > -1,
     imageInactive: playerActivated === -1,
@@ -36,20 +36,36 @@ const FactionsView = ({ className }) => {
       : {};
 
   return (
-    <div className={className ?? classes.main}>
-      {sortedFactions.map((faction) => (
-        <div key={faction.id} className={classes.item}>
-          <img
-            className={imageClass}
-            id={faction.id}
-            {...factionsAssets[faction.id]}
-            {...clickProps}
-          />
-          <div id={faction.id} className={labelClass} {...clickProps}>
-            {faction.name.value}
-          </div>
-        </div>
-      ))}
+    <div className={className}>
+      <div className={classes.main}>
+        {sortedFactions.map((faction) => {
+          const { id } = faction;
+          const { portrait, icon } = factionsAssets[id];
+          const { src: portraitSrc, alt: portraitAlt } = portrait;
+          const { src: iconSrc, alt: iconAlt } = icon;
+          return (
+            <div key={id} id={id} className={classes.item} {...clickProps}>
+              <img
+                className={portraitClass}
+                id={id}
+                src={portraitSrc}
+                alt={portraitAlt}
+              />
+              <div id={id} className={labelClass}>
+                <img
+                  className={classes.icon}
+                  id={id}
+                  src={iconSrc}
+                  alt={iconAlt}
+                />
+                <div className={classes.name} id={id}>
+                  {faction.name.value}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

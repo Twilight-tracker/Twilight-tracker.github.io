@@ -3,10 +3,11 @@ import { useScrollToTop } from "../../hooks/useScrollToTop";
 import classes from "./ScrollToTop.module.css";
 
 const ScrollToTop = ({ containerId }) => {
-  const [showButton, scrollMethod] = useScrollToTop({
-    containerId: `scrollable-container-${containerId}`,
+  const params = {
+    containerId: containerId ? `scrollable-container-${containerId}` : undefined,
     behavior: "smooth",
-  });
+  }
+  const [showButton, scrollMethod] = useScrollToTop(params);
 
   if (showButton) {
     return (

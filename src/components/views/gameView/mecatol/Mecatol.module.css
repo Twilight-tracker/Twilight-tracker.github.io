@@ -1,0 +1,22 @@
+.grid {
+  position: relative;
+  --item-width: 100px;
+  --item-height: calc(0.5 * sqrt(3) * var(--image-width));
+  --gap: 10px;
+}
+
+.field {
+  margin: 0;
+  width: 100px;
+  filter: drop-shadow(0 0 1px whitesmoke);
+}
+
+.mecatol {
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  width: 80%;
+  filter: drop-shadow(0 0 15px hsl(200, 90%, 50%));
+  -webkit-user-select: none;
+  user-select: none;
+}

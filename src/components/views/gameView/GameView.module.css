@@ -25,23 +25,35 @@
   left: 10px;
 }
 
-.secrets {
-  position: absolute;
-  top: 10px;
-  left: 450px;
-}
-
 .pointCounter {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 70px;
 
   width: 400px;
-  padding-left: 34px;
   -webkit-user-select: none;
   user-select: none;
-  align-self: end;
-  transform: translateY(10px);
+}
+
+.pointsTable {
+  position: absolute;
+  top: 10px;
+  left: 600px;
+}
+
+.mecatol {
+  position: absolute;
+  top: -30px;
+  right: 100px;
+}
+
+.relics {
+  position: absolute;
+  top: 280px;
+  right: 70px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }
 
 .objectives {

@@ -1,0 +1,16 @@
+.main {
+  --_content-base-height: var(--content-base-height);
+  position: relative;
+  width: calc(2 * sqrt(3) / 3 * var(--_content-base-height));
+  height: var(--_content-base-height);
+  font-size: calc(var(--_content-base-height) / 221 * 16);
+}
+
+.date {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  color: hsl(39, 60%, 70%);
+}

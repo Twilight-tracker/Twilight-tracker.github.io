@@ -1,0 +1,68 @@
+.total {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.main {
+  max-width: 500px;
+  text-align: center;
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.canvas {
+  height: 80px;
+  pointer-events: none;
+}
+
+.hex {
+  stroke: whitesmoke;
+  stroke-width: 10px;
+  cursor: pointer;
+  pointer-events: fill;
+}
+
+.active {
+  fill: hsl(115, 97%, 35%);
+  &:hover {
+    fill: hsl(115, 97%, 45%);
+  }
+}
+
+.inactive {
+  fill: hsl(240, 33%, 38%);
+  &:hover {
+    fill: hsl(240, 33%, 48%);
+  }
+}
+
+.burger {
+  stroke: whitesmoke;
+}
+
+.overlay {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 21;
+  width: 500px;
+  height: auto;
+  padding: 30px;
+  background: #23759e;
+  border-radius: 8px;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: auto;
+}
+
+.button {
+  width: 100%;
+  margin: 16px 0;
+  padding: 16px;
+  font-size: 1.2rem;
+  border: 1px solid #3f3f3f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}

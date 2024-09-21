@@ -37,7 +37,7 @@ export const actions = {
     const gameSettings = { ...currentState.gameSettings };
     gameSettings.colors[position].colorId = colorId;
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 
   SET_FACTION: (currentState, { position, factionId }) => {
@@ -50,7 +50,7 @@ export const actions = {
     const gameSettings = { ...currentState.gameSettings };
     gameSettings.factions[position].factionId = factionId;
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 
   SET_POINTS: (currentState, { points }) => {
@@ -59,7 +59,7 @@ export const actions = {
     }
     const gameSettings = { ...currentState.gameSettings, points: points };
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 
   RESET_COLORS: (currentState, _) => {
@@ -68,7 +68,7 @@ export const actions = {
       colors: structuredClone(defaultColors),
     };
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 
   RESET_FACTIONS: (currentState, _) => {
@@ -77,7 +77,7 @@ export const actions = {
       factions: structuredClone(defaultFactions),
     };
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 
   RESET_PLAYERS: (currentState, _) => {
@@ -87,7 +87,7 @@ export const actions = {
       factions: structuredClone(defaultFactions),
     };
     localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
-    return { gameSettings: gameSettings };
+    return { gameSettings };
   },
 };
 

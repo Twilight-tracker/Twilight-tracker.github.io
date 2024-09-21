@@ -1,9 +1,8 @@
 .main {
-  --item-width: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2px 20px;
 }
 
 .item {
@@ -36,16 +35,20 @@
 
 .label {
   position: absolute;
-  bottom: calc(0.05 * var(--item-width));
-  left: calc(0.05 * var(--item-width));
-  vertical-align: bottom;
-  padding: 10px 5px;
-  width: calc(0.9 * var(--item-width));
+  bottom: calc(0.02 * var(--item-width));
+  left: 0;
+
+  width: var(--item-width);
   margin: 0 auto;
-  color: white;
+  padding: 10px 5px;
   z-index: 20;
-  text-transform: uppercase;
-  line-height: 0.9;
+
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+
   -webkit-user-select: none;
   user-select: none;
 
@@ -66,4 +69,16 @@
 
 .labelActive {
   cursor: pointer;
+}
+
+.icon {
+  width: 30px;
+  transform: translateY(3px);
+  filter: drop-shadow(0 0 2px whitesmoke) drop-shadow(0 0 2px black);
+}
+
+.name {
+  color: white;
+  text-transform: uppercase;
+  line-height: 0.9;
 }

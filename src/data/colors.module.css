@@ -10,6 +10,8 @@
   --hoverColor: hsl(0, 0%, 25%);
   --inactiveColor: hsl(0, 0%, 40%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-black);
+  --stripesHoverUrl: url(#stripes-black-hover);
 }
 
 .blue {
@@ -17,6 +19,8 @@
   --hoverColor: hsl(210, 100%, 45%);
   --inactiveColor: hsl(210, 60%, 60%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-blue);
+  --stripesHoverUrl: url(#stripes-blue-hover);
 }
 
 .orange {
@@ -24,6 +28,8 @@
   --hoverColor: hsl(24, 100%, 60%);
   --inactiveColor: hsl(24, 60%, 70%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-orange);
+  --stripesHoverUrl: url(#stripes-orange-hover);
 }
 
 .red {
@@ -31,6 +37,8 @@
   --hoverColor: hsl(0, 100%, 40%);
   --inactiveColor: hsl(0, 60%, 60%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-red);
+  --stripesHoverUrl: url(#stripes-red-hover);
 }
 
 .pink {
@@ -38,6 +46,8 @@
   --hoverColor: hsl(323, 100%, 60%);
   --inactiveColor: hsl(323, 60%, 70%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-pink);
+  --stripesHoverUrl: url(#stripes-pink-hover);
 }
 
 .green {
@@ -45,6 +55,8 @@
   --hoverColor: hsl(150, 70%, 35%);
   --inactiveColor: hsl(150, 30%, 50%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-green);
+  --stripesHoverUrl: url(#stripes-green-hover);
 }
 
 .yellow {
@@ -52,11 +64,15 @@
   --hoverColor: hsl(45, 100%, 80%);
   --inactiveColor: hsl(45, 60%, 80%);
   --textColor: #000000;
+  --stripesUrl: url(#stripes-yellow);
+  --stripesHoverUrl: url(#stripes-yellow-hover);
 }
 
 .purple {
   --color: hsl(300, 80%, 20%);
-  --hoverColor: hsl(300, 80%, 35%);
+  --hoverColor: hsl(300, 80%, 30%);
   --inactiveColor: hsl(300, 40%, 60%);
   --textColor: #FFFFFF;
+  --stripesUrl: url(#stripes-purple);
+  --stripesHoverUrl: url(#stripes-purple-hover);
 }

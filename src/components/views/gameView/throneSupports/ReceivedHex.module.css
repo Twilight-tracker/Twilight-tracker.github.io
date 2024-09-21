@@ -1,0 +1,16 @@
+.hex {
+  cursor: pointer;
+  pointer-events: fill;
+  fill: var(--color);
+  stroke: whitesmoke;
+  stroke-width: 8px;
+  &:hover {
+    fill: var(--hoverColor);
+    stroke: whitesmoke;
+  }
+
+}
+
+.check {
+  fill: var(--textColor, whitesmoke);
+}

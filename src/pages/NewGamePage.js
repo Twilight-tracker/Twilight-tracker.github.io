@@ -1,4 +1,4 @@
-import SettingsView from "../components/views/settngsView/SettingsView";
+import SettingsView from "../components/views/settingsView/SettingsView";
 
 const NewGamePage = () => {
   document.title = "Новая игра | Сумерки";

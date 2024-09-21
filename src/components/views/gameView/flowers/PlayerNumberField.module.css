@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(calc(-50% - 2px));
+  display: inline-block;
+  width: 45px;
+  height: 52px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-size: 2.2rem;
+  line-height: 52px;
+  vertical-align: middle;
+  letter-spacing: -4px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  pointer-events: fill;
+  cursor: pointer;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  fill: var(--color);
+  stroke: whitesmoke;
+  stroke-width: 2px;
+  &:hover {
+    fill: var(--hoverColor);
+    stroke: whitesmoke;
+  }
+}
+
+.hex {
+  fill: #555555;
+  stroke: #aaaaaa;
+  stroke-width: 1px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}

@@ -1,0 +1,16 @@
+.grid {
+  --item-width: calc(var(--_base-height) / 280 * 120);
+  --item-height: calc(0.5 * sqrt(3) * var(--item-width));
+  --gap: calc(var(--_base-height) / 280 * 32);
+}
+
+.image {
+  width: calc(var(--_base-height) / 280 * 38);
+  filter: drop-shadow(0 0 2px whitesmoke) drop-shadow(0 0 2px black);
+
+  --_unchecked-opacity: 0;
+}
+
+.checkedPetal {
+  opacity: 1;
+}

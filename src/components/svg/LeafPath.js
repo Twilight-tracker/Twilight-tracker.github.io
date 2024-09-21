@@ -1,26 +1,20 @@
-import { useState } from "react";
 import { useHexedCanvasContext } from "./HexedCanvas";
 import { useButtonContext } from "../ui/Button";
 
-const innerMult = 0.08;
-const outerMult = 0.8;
+const innerMult = 0.12;
+const outerMult = 0.85;
 const dataAngles = [-Math.PI / 3, 0, Math.PI / 3];
 
-const LeafPath = ({
-  leafType,
-  fill = "#000080",
-  hoverFill = fill,
-  ...props
-}) => {
-  const { width, height, radius } = useHexedCanvasContext();
-  const center = { x: 0.5 * width, y: 0.5 * height };
-
+const LeafPath = ({ className, leafType, center, radius, ...props }) => {
+  const context = useHexedCanvasContext();
+  if (!center) {
+    center = { x: 0.5 * context.width, y: 0.5 * context.height };
+  }
+  if (!radius) {
+    radius = context.radius;
+  }
   const buttonProps = useButtonContext();
 
-  const [hover, setHover] = useState(false);
-  const hoverHandler = () => {
-    setHover((hover) => !hover, []);
-  };
   if (!["forward", "backward"].includes(leafType)) {
     leafType = "forward";
   }
@@ -45,16 +39,7 @@ const LeafPath = ({
     ...outerPoints.map(([x, y]) => `${x},${y}`),
   ].join(" ");
 
-  return (
-    <path
-      {...props}
-      {...buttonProps}
-      onMouseOver={hoverHandler}
-      onMouseOut={hoverHandler}
-      fill={hover ? hoverFill : fill}
-      d={`M${path}z`}
-    />
-  );
+  return <path className={className} {...props} {...buttonProps} d={`M${path}z`} />;
 };
 
 export default LeafPath;

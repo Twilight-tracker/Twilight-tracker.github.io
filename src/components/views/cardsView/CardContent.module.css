@@ -1,5 +1,5 @@
 .content {
-  --_content-base-height: var(--content-base-height);
+  --_content-base-height: var(--content-base-height, 221px);
   position: relative;
   width: calc(2 * sqrt(3) / 3 * var(--_content-base-height));
   height: var(--_content-base-height);
@@ -63,5 +63,5 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2em;
-  color: yellow;
+  color: hsl(39, 60%, 70%);
 }

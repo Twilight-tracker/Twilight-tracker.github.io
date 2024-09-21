@@ -1,133 +1,316 @@
-import arborecImage from "./factions/arborec.png";
-import argentImage from "./factions/argent.png";
-import baronyImage from "./factions/barony.png";
-import cabalImage from "./factions/cabal.png";
-import empyreanImage from "./factions/empyrean.png";
-import ghostsImage from "./factions/ghosts.png";
-import hacanImage from "./factions/hacan.png";
-import jolnarImage from "./factions/jolnar.png";
-import keleresImage from "./factions/keleres.png";
-import l1z1xImage from "./factions/l1z1x.png";
-import mahactImage from "./factions/mahact.png";
-import mentakImage from "./factions/mentak.png";
-import muaatImage from "./factions/muaat.png";
-import naaluImage from "./factions/naalu.png";
-import naazrokhaImage from "./factions/naazrokha.png";
-import nekroImage from "./factions/nekro.png";
-import nomadImage from "./factions/nomad.png";
-import saarImage from "./factions/saar.png";
-import sardakkImage from "./factions/sardakk.png";
-import solImage from "./factions/sol.png";
-import titansImage from "./factions/titans.png";
-import winnuImage from "./factions/winnu.png";
-import xxchaImage from "./factions/xxcha.png";
-import yinImage from "./factions/yin.png";
-import yssarilImage from "./factions/yssaril.png";
-import unknownImage from "./factions/unknown.png";
+import arborecPortrait from "./factionPortraits/arborec.png";
+import argentPortrait from "./factionPortraits/argent.png";
+import baronyPortrait from "./factionPortraits/barony.png";
+import cabalPortrait from "./factionPortraits/cabal.png";
+import empyreanPortrait from "./factionPortraits/empyrean.png";
+import ghostsPortrait from "./factionPortraits/ghosts.png";
+import hacanPortrait from "./factionPortraits/hacan.png";
+import jolnarPortrait from "./factionPortraits/jolnar.png";
+import keleresPortrait from "./factionPortraits/keleres.png";
+import l1z1xPortrait from "./factionPortraits/l1z1x.png";
+import mahactPortrait from "./factionPortraits/mahact.png";
+import mentakPortrait from "./factionPortraits/mentak.png";
+import muaatPortrait from "./factionPortraits/muaat.png";
+import naaluPortrait from "./factionPortraits/naalu.png";
+import naazrokhaPortrait from "./factionPortraits/naazrokha.png";
+import nekroPortrait from "./factionPortraits/nekro.png";
+import nomadPortrait from "./factionPortraits/nomad.png";
+import saarPortrait from "./factionPortraits/saar.png";
+import sardakkPortrait from "./factionPortraits/sardakk.png";
+import solPortrait from "./factionPortraits/sol.png";
+import titansPortrait from "./factionPortraits/titans.png";
+import winnuPortrait from "./factionPortraits/winnu.png";
+import xxchaPortrait from "./factionPortraits/xxcha.png";
+import yinPortrait from "./factionPortraits/yin.png";
+import yssarilPortrait from "./factionPortraits/yssaril.png";
+import unknownPortrait from "./factionPortraits/unknown.png";
+
+import arborecIcon from "./factionIcons/arborec.png";
+import argentIcon from "./factionIcons/argent.png";
+import baronyIcon from "./factionIcons/barony.png";
+import cabalIcon from "./factionIcons/cabal.png";
+import empyreanIcon from "./factionIcons/empyrean.png";
+import ghostsIcon from "./factionIcons/ghosts.png";
+import hacanIcon from "./factionIcons/hacan.png";
+import jolnarIcon from "./factionIcons/jolnar.png";
+import keleresIcon from "./factionIcons/keleres.png";
+import l1z1xIcon from "./factionIcons/l1z1x.png";
+import mahactIcon from "./factionIcons/mahact.png";
+import mentakIcon from "./factionIcons/mentak.png";
+import muaatIcon from "./factionIcons/muaat.png";
+import naaluIcon from "./factionIcons/naalu.png";
+import naazrokhaIcon from "./factionIcons/naazrokha.png";
+import nekroIcon from "./factionIcons/nekro.png";
+import nomadIcon from "./factionIcons/nomad.png";
+import saarIcon from "./factionIcons/saar.png";
+import sardakkIcon from "./factionIcons/sardakk.png";
+import solIcon from "./factionIcons/sol.png";
+import titansIcon from "./factionIcons/titans.png";
+import winnuIcon from "./factionIcons/winnu.png";
+import xxchaIcon from "./factionIcons/xxcha.png";
+import yinIcon from "./factionIcons/yin.png";
+import yssarilIcon from "./factionIcons/yssaril.png";
+import unknownIcon from "./factionIcons/unknown.png";
 
 export const factionsAssets = {
   _unknown: {
-    src: unknownImage,
-    alt: "unknown",
+    portrait: {
+      src: unknownPortrait,
+      alt: "unknownPortrait",
+    },
+    icon: {
+      src: unknownIcon,
+      alt: "unknownIcon",
+    }
   },
   arborec: {
-    src: arborecImage,
-    alt: "arborec",
+    portrait: {
+      src: arborecPortrait,
+      alt: "arborecPortrait",
+    },
+    icon: {
+      src: arborecIcon,
+      alt: "arborecIcon",
+    }
   },
   argent: {
-    src: argentImage,
-    alt: "argent",
+    portrait: {
+      src: argentPortrait,
+      alt: "argentPortrait",
+    },
+    icon: {
+      src: argentIcon,
+      alt: "argentIcon",
+    }
   },
   barony: {
-    src: baronyImage,
-    alt: "barony",
+    portrait: {
+      src: baronyPortrait,
+      alt: "baronyPortrait",
+    },
+    icon: {
+      src: baronyIcon,
+      alt: "baronyIcon",
+    }
   },
   cabal: {
-    src: cabalImage,
-    alt: "cabal",
+    portrait: {
+      src: cabalPortrait,
+      alt: "cabalPortrait",
+    },
+    icon: {
+      src: cabalIcon,
+      alt: "cabalIcon",
+    }
   },
   empyrean: {
-    src: empyreanImage,
-    alt: "empyrean",
+    portrait: {
+      src: empyreanPortrait,
+      alt: "empyreanPortrait",
+    },
+    icon: {
+      src: empyreanIcon,
+      alt: "empyreanIcon",
+    }
   },
   ghosts: {
-    src: ghostsImage,
-    alt: "ghosts",
+    portrait: {
+      src: ghostsPortrait,
+      alt: "ghostsPortrait",
+    },
+    icon: {
+      src: ghostsIcon,
+      alt: "ghostsIcon",
+    }
   },
   hacan: {
-    src: hacanImage,
-    alt: "hacan",
+    portrait: {
+      src: hacanPortrait,
+      alt: "hacanPortrait",
+    },
+    icon: {
+      src: hacanIcon,
+      alt: "hacanIcon",
+    }
   },
   jolnar: {
-    src: jolnarImage,
-    alt: "jolnar",
+    portrait: {
+      src: jolnarPortrait,
+      alt: "jolnarPortrait",
+    },
+    icon: {
+      src: jolnarIcon,
+      alt: "jolnarIcon",
+    }
   },
   keleres: {
-    src: keleresImage,
-    alt: "keleres",
+    portrait: {
+      src: keleresPortrait,
+      alt: "keleresPortrait",
+    },
+    icon: {
+      src: keleresIcon,
+      alt: "keleresIcon",
+    }
   },
   l1z1x: {
-    src: l1z1xImage,
-    alt: "l1z1x",
+    portrait: {
+      src: l1z1xPortrait,
+      alt: "l1z1xPortrait",
+    },
+    icon: {
+      src: l1z1xIcon,
+      alt: "l1z1xIcon",
+    }
   },
   mahact: {
-    src: mahactImage,
-    alt: "mahact",
+    portrait: {
+      src: mahactPortrait,
+      alt: "mahactPortrait",
+    },
+    icon: {
+      src: mahactIcon,
+      alt: "mahactIcon",
+    }
   },
   mentak: {
-    src: mentakImage,
-    alt: "mentak",
+    portrait: {
+      src: mentakPortrait,
+      alt: "mentakPortrait",
+    },
+    icon: {
+      src: mentakIcon,
+      alt: "mentakIcon",
+    }
   },
   muaat: {
-    src: muaatImage,
-    alt: "muaat",
+    portrait: {
+      src: muaatPortrait,
+      alt: "muaatPortrait",
+    },
+    icon: {
+      src: muaatIcon,
+      alt: "muaatIcon",
+    }
   },
   naalu: {
-    src: naaluImage,
-    alt: "naalu",
+    portrait: {
+      src: naaluPortrait,
+      alt: "naaluPortrait",
+    },
+    icon: {
+      src: naaluIcon,
+      alt: "naaluIcon",
+    }
   },
   naazrokha: {
-    src: naazrokhaImage,
-    alt: "naazrokha",
+    portrait: {
+      src: naazrokhaPortrait,
+      alt: "naazrokhaPortrait",
+    },
+    icon: {
+      src: naazrokhaIcon,
+      alt: "naazrokhaIcon",
+    }
   },
   nekro: {
-    src: nekroImage,
-    alt: "nekro",
+    portrait: {
+      src: nekroPortrait,
+      alt: "nekroPortrait",
+    },
+    icon: {
+      src: nekroIcon,
+      alt: "nekroIcon",
+    }
   },
   nomad: {
-    src: nomadImage,
-    alt: "nomad",
+    portrait: {
+      src: nomadPortrait,
+      alt: "nomadPortrait",
+    },
+    icon: {
+      src: nomadIcon,
+      alt: "nomadIcon",
+    }
   },
   saar: {
-    src: saarImage,
-    alt: "saar",
+    portrait: {
+      src: saarPortrait,
+      alt: "saarPortrait",
+    },
+    icon: {
+      src: saarIcon,
+      alt: "saarIcon",
+    }
   },
   sardakk: {
-    src: sardakkImage,
-    alt: "sardakk",
+    portrait: {
+      src: sardakkPortrait,
+      alt: "sardakkPortrait",
+    },
+    icon: {
+      src: sardakkIcon,
+      alt: "sardakkIcon",
+    }
   },
   sol: {
-    src: solImage,
-    alt: "sol",
+    portrait: {
+      src: solPortrait,
+      alt: "solPortrait",
+    },
+    icon: {
+      src: solIcon,
+      alt: "solIcon",
+    }
   },
   titans: {
-    src: titansImage,
-    alt: "titans",
+    portrait: {
+      src: titansPortrait,
+      alt: "titansPortrait",
+    },
+    icon: {
+      src: titansIcon,
+      alt: "titansIcon",
+    }
   },
   winnu: {
-    src: winnuImage,
-    alt: "winnu",
+    portrait: {
+      src: winnuPortrait,
+      alt: "winnuPortrait",
+    },
+    icon: {
+      src: winnuIcon,
+      alt: "winnuIcon",
+    }
   },
   xxcha: {
-    src: xxchaImage,
-    alt: "xxcha",
+    portrait: {
+      src: xxchaPortrait,
+      alt: "xxchaPortrait",
+    },
+    icon: {
+      src: xxchaIcon,
+      alt: "xxchaIcon",
+    }
   },
   yin: {
-    src: yinImage,
-    alt: "yin",
+    portrait: {
+      src: yinPortrait,
+      alt: "yinPortrait",
+    },
+    icon: {
+      src: yinIcon,
+      alt: "yinIcon",
+    }
   },
   yssaril: {
-    src: yssarilImage,
-    alt: "yssaril",
+    portrait: {
+      src: yssarilPortrait,
+      alt: "yssarilPortrait",
+    },
+    icon: {
+      src: yssarilIcon,
+      alt: "yssarilIcon",
+    }
   },
 };

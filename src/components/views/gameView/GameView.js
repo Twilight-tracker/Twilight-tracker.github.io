@@ -1,9 +1,11 @@
 import { createContext, useContext, useState } from "react";
-import GameMenu from "./GameMenu";
-import Objectives from "./Objectives";
-import FactionPointCounter from "./FactionPointCounter";
-import MagnifierButton from "./MagnifierButton";
-import Secrets from "./Secrets";
+import GameMenu from "./ui/GameMenu";
+import MagnifierButton from "./ui/MagnifierButton";
+import PointCounter from "./pointCounter/PointCounter";
+import PointsTable from "./pointsTable/PointsTable";
+import Mecatol from "./mecatol/Mecatol";
+import Relics from "./relics/Relics";
+import Objectives from "./objectives/Objectives";
 import classes from "./GameView.module.css";
 
 const GameViewContext = createContext();
@@ -17,9 +19,11 @@ const GameView = () => {
       <div className={classes.main}>
         <GameMenu className={classes.menu} />
         <MagnifierButton className={classes.magnifier} />
-        <FactionPointCounter className={classes.pointCounter} />
+        <PointCounter className={classes.pointCounter} />
+        <PointsTable className={classes.pointsTable} />
+        <Mecatol className={classes.mecatol} />
+        <Relics className={classes.relics} />
         <Objectives className={classes.objectives} />
-        <Secrets className={classes.secrets} />
       </div>
     </GameViewContext.Provider>
   );

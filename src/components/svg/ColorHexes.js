@@ -10,56 +10,48 @@ const dataPoints = [
   },
   {
     colorId: "blue",
-    shift: { x: 1, y: 0 },
+    shift: { x: 0, y: 1 },
   },
   {
     colorId: "orange",
-    shift: { x: 0.5, y: 0.5 * sqrt3 },
+    shift: { x: 0.5 * sqrt3, y: -0.5 },
   },
   {
     colorId: "red",
-    shift: { x: 0.5, y: -0.5 * sqrt3 },
+    shift: { x: -0.5 * sqrt3, y: -0.5 },
   },
   {
     colorId: "pink",
-    shift: { x: -0.5, y: 0.5 * sqrt3 },
+    shift: { x: 0.5 * sqrt3, y: 0.5 },
   },
   {
     colorId: "yellow",
-    shift: { x: -0.5, y: -0.5 * sqrt3 },
+    shift: { x: -0.5 * sqrt3, y: 0.5 },
   },
   {
     colorId: "green",
-    shift: { x: 0, y: sqrt3 },
+    shift: { x: sqrt3, y: 0 },
   },
   {
     colorId: "purple",
-    shift: { x: 0, y: -sqrt3 },
+    shift: { x: -sqrt3, y: 0 },
   },
 ];
 
-const coef = 0.55;
-const adjustFirstPlayerToTop = -2;
+const coef = 1.08 * sqrt3;
 
-const ColorHexes = ({
-  sitOnSide = true,
-  playerIndex = 0,
-  ...props
-}) => {
+const ColorHexes = ({className, ...props}) => {
   const { width, height, radius } = useHexedCanvasContext();
   const center = { x: 0.5 * width, y: 0.5 * height };
 
-  const sideAngle = sitOnSide ? 0.5 : 0;
-  const alpha = ((playerIndex + adjustFirstPlayerToTop + sideAngle) * Math.PI) / 3;
   return (
     <>
       {dataPoints.map(({ shift, colorId }) => {
-        const [shiftX, shiftY] = [2 + coef * shift.x, coef * shift.y];
-        const x = shiftX * Math.cos(alpha) - shiftY * Math.sin(alpha);
-        const y = shiftX * Math.sin(alpha) + shiftY * Math.cos(alpha);
+        const [x, y] = [coef * shift.x, coef * shift.y];
         const color = colors[colorId];
         return (
           <HexPath
+            className={className}
             {...props}
             id={colorId}
             key={colorId}
@@ -67,7 +59,7 @@ const ColorHexes = ({
               x: center.x + radius * x,
               y: center.y + radius * y,
             }}
-            radius={0.3 * radius}
+            radius={radius}
             fill={color.color}
           />
         );

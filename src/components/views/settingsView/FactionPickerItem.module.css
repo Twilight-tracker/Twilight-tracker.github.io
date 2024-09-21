@@ -1,0 +1,51 @@
+.portrait {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.icon {
+  display: none;
+}
+
+.active {
+  filter: drop-shadow(0 0 10px red);
+}
+
+.canvas {
+  position: absolute;
+  width: 80px;
+  bottom: -28px;
+  right: 50%;
+  transform: translateX(50%);
+  pointer-events: none;
+}
+
+.colorActive {
+  filter: drop-shadow(0 0 10px red);
+}
+
+.hex {
+  pointer-events: fill;
+  cursor: pointer;
+}
+
+.hex {
+  fill: var(--color);
+  &:hover {
+    fill: var(--hoverColor);
+  }
+}
+
+.activeHex {
+  stroke: red;
+}
+
+.inactiveHex {
+  stroke: whitesmoke;
+}

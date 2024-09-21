@@ -9,6 +9,8 @@ import CheckPath from "./CheckPath";
 import MagnifierPath from "./MagnifierPath";
 import BurgerPath from "./BurgerPath";
 import SecretPath from "./SecretPath";
+import StripesPattern from "./StripesPattern";
+import PetalHexes from "./PetalHexes";
 
 const HexedCanvasContext = createContext();
 
@@ -44,11 +46,16 @@ HexedCanvas.Hex = HexPath;
 HexedCanvas.Petal = PetalPath;
 HexedCanvas.Flower = FlowerPath;
 HexedCanvas.Leaf = LeafPath;
+
 HexedCanvas.ColorHexes = ColorHexes;
+HexedCanvas.PetalHexes = PetalHexes;
+
 HexedCanvas.Plus = PlusPath;
 HexedCanvas.Check = CheckPath;
 HexedCanvas.Magnifier = MagnifierPath;
 HexedCanvas.Burger = BurgerPath;
 HexedCanvas.Secret = SecretPath;
+
+HexedCanvas.StripesPattern = StripesPattern;
 
 export default HexedCanvas;

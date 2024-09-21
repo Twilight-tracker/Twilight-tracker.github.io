@@ -1,0 +1,13 @@
+.grid {
+  --_item-width: var(--item-width, 120px);
+  --_item-height: var(--item-height, calc(0.5 * sqrt(3) * var(--_item-width)));
+  --_gap: var(--gap, 18px);
+
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(3, calc(0.75 * var(--_item-width)));
+  grid-template-rows: repeat(6, max(0.5 * var(--_item-height)));
+  gap: var(--_gap) calc(sqrt(3) * var(--_gap));
+  align-items: unsafe end;
+  justify-items: center;
+}

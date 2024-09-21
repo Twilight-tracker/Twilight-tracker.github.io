@@ -9,7 +9,7 @@
   left: 0;
   width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: -1;
 
   /* background-color: black; */
@@ -47,7 +47,7 @@
 .faction {
   position: absolute;
   width: 40%;
-  bottom: 15%;
+  bottom: -10%;
   left: 65%;
   mask-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.9) 10%, transparent 90%);
 }

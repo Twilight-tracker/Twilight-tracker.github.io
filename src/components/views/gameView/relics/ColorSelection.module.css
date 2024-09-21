@@ -1,0 +1,8 @@
+.petal {
+  fill: var(--color);
+  pointer-events: fill;
+  cursor: pointer;
+  &:hover {
+    fill: var(--hoverColor);
+  }
+}

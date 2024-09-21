@@ -31,13 +31,9 @@ const Background = () => {
     }
   }
 
-  const mainClass = classNames({
-    [classes.main]: true,
-    [colorClasses[stableLeader.colorId]]: showLeader && stableLeader.index > -1,
-  });
-
   const backgroundClass = cx({
     background: true,
+    [colorClasses[stableLeader.colorId]]: showLeader && stableLeader.index > -1,
     gradient: showLeader && stableLeader.index > -1,
     gradientEnter: showLeader && !exitState && stableLeader.index > -1,
     gradientExit: showLeader && exitState,
@@ -50,13 +46,13 @@ const Background = () => {
   });
 
   return (
-    <div className={mainClass}>
+    <div className={classes.main}>
       <div className={backgroundClass}>
         {showLeader && stableLeader.index > -1 && (
           <img
             className={factionClass}
-            src={factionsAssets[stableLeader.factionId].src}
-            alt={factionsAssets[stableLeader.factionId].alt}
+            src={factionsAssets[stableLeader.factionId].portrait.src}
+            alt={factionsAssets[stableLeader.factionId].portrait.alt}
           />
         )}
       </div>

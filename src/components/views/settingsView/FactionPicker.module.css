@@ -1,0 +1,30 @@
+.main {
+  position: relative;
+  margin: 100px auto;
+  --item-width: 175px;
+}
+
+.grid {
+  --item-height: calc(0.5 * sqrt(3) * var(--item-width));
+  --gap: 20px;
+}
+
+.coloredCanvas {
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(1.5 * var(--item-width));
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
+  pointer-events: none;
+  
+  & path:hover {
+    stroke: whitesmoke;
+    stroke-width: 0.5px;
+  }
+}
+
+.colorHexes {
+  pointer-events: fill;
+  cursor: pointer;
+}
