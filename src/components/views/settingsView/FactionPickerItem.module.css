@@ -31,12 +31,10 @@
 }
 
 .hex {
+  fill: var(--color);
   pointer-events: fill;
   cursor: pointer;
-}
 
-.hex {
-  fill: var(--color);
   &:hover {
     fill: var(--hoverColor);
   }
