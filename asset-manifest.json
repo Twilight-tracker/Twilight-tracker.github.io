@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbfe3969.css",
-    "main.js": "/static/js/main.d7dc7ec0.js",
+    "main.css": "/static/css/main.989dbdbf.css",
+    "main.js": "/static/js/main.1ac3d01d.js",
     "static/media/pexels-kaip-1341279.jpg": "/static/media/pexels-kaip-1341279.6d582c84c68f1ca3b47d.jpg",
     "static/media/hacan.png": "/static/media/hacan.f4f63c29f305cf9b90b6.png",
     "static/media/xxcha.png": "/static/media/xxcha.28898d85638e0e9dc033.png",
@@ -33,11 +33,11 @@
     "static/media/emphidiaCrown.png": "/static/media/emphidiaCrown.a647eedbdf8ba75e4ed0.png",
     "static/media/unknown.png": "/static/media/unknown.b3ded1f05a6fff3f4e15.png",
     "index.html": "/index.html",
-    "main.cbfe3969.css.map": "/static/css/main.cbfe3969.css.map",
-    "main.d7dc7ec0.js.map": "/static/js/main.d7dc7ec0.js.map"
+    "main.989dbdbf.css.map": "/static/css/main.989dbdbf.css.map",
+    "main.1ac3d01d.js.map": "/static/js/main.1ac3d01d.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbfe3969.css",
-    "static/js/main.d7dc7ec0.js"
+    "static/css/main.989dbdbf.css",
+    "static/js/main.1ac3d01d.js"
   ]
 }
