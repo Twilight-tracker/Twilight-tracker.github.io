@@ -5,13 +5,16 @@ import classNames from "classnames/bind";
 import classes from "./FactionsView.module.css";
 
 const cx = classNames.bind(classes);
+
+const expansions = { main: 0, te: 1 };
+const sortByExpansionAndName = (first, second) =>
+            (expansions[first.expansion] - expansions[second.expansion]) * 10 +
+            (first.name.value > second.name.value) -
+            (first.name.value < second.name.value);
+
 const sortedFactions = Object.values(factions)
-  .filter((faction) => faction.id[0] !== "_")
-  .sort(
-    (first, second) =>
-      (first.name.value > second.name.value) -
-      (first.name.value < second.name.value)
-  );
+  .filter((faction) => faction.available)
+  .sort(sortByExpansionAndName);
 
 const FactionsView = ({ className }) => {
   const { playerActivated, setFaction } = useSettingsContext() ?? {

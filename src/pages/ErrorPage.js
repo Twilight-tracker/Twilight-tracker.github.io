@@ -1,4 +1,4 @@
-import Error from "../components/Layout/Error";
+import Error from "../components/core/Error";
 
 const ErrorPage = () => {
   document.title = "Ошибка | Сумерки";

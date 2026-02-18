@@ -4,15 +4,15 @@ let globalState = {};
 let listeners = [];
 let actions = {};
 
+const dispatch = (actionId, payload) => {
+  const newState = actions[actionId](globalState, payload);
+
+  globalState = { ...globalState, ...newState };
+  listeners.forEach((li) => li(globalState));
+};
+
 export const useStorage = (shouldListen = true) => {
   const setState = useState(globalState)[1];
-
-  const dispatch = (actionId, payload) => {
-    const newState = actions[actionId](globalState, payload);
-
-    globalState = { ...globalState, ...newState };
-    listeners.forEach((li) => li(globalState));
-  };
 
   useEffect(() => {
     if (shouldListen) listeners.push(setState);

@@ -13,7 +13,7 @@ const SecretHex = ({
   center,
   radius,
 }) => {
-  const { dispatch } = useStorage();
+  const { dispatch } = useStorage(false);
   const taken = secret.taken;
   const checked = taken && secret.cardId;
   const clickHandler = taken

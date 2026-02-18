@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import classNames from "classnames/bind";
 import ReactDOM from "react-dom";
-import Backdrop from "../Layout/Backdrop";
+import Backdrop from "../core/Backdrop";
 import classes from "./Overlay.module.css";
 
 const cx = classNames.bind(classes);

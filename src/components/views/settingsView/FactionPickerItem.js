@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import { useSettingsContext } from "./SettingsView";
 import { useWheelContext } from "./FactionPicker";
 import HexedCanvas from "../../svg/HexedCanvas";
-import HexGrid from "../../Layout/HexGrid";
+import HexGrid from "../../core/HexGrid";
 import { factionsAssets } from "../../../assets/factions";
 import classes from "./FactionPickerItem.module.css";
 import colors from "../../../data/colors.module.css";

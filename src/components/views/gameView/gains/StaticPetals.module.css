@@ -1,0 +1,11 @@
+.petal {
+  fill: color-mix(
+    in srgb,
+    var(--hoverColor) calc(var(--groupHovered, 0) * 100%),
+    var(--color)
+  );
+  stroke: #aaaaaa;
+  stroke-width: 1px;
+  pointer-events: fill;
+  cursor: pointer;
+}

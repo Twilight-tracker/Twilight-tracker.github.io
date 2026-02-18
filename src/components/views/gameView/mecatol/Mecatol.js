@@ -1,5 +1,5 @@
 import { useStorage } from "../../../../hooks/useStorage";
-import HexGrid from "../../../Layout/HexGrid";
+import HexGrid from "../../../core/HexGrid";
 import MecatolField from "./MecatolField";
 import mecatolImage from "../../../../assets/mecatol.png";
 import classes from "./Mecatol.module.css";

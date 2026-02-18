@@ -14,18 +14,19 @@ export const useTotalPoints = () => {
     mecatolPoints,
     objectives,
     secrets,
-    relics,
+    gains,
     throneSupports,
   } = storage.gameState;
-  const { emphidiaCrown, throneShard } = relics;
+  const { crownOfEmphidia, shardOfTheThrone, styx } = gains;
   const { colors, factions } = storage.gameSettings;
 
   const totalPoints = [...Array(6).keys()].map(
     (index) =>
       extraPoints[index] +
       mecatolPoints[index] +
-      (emphidiaCrown === index ? 1 : 0) +
-      (throneShard === index ? 1 : 0) +
+      (crownOfEmphidia === index ? 1 : 0) +
+      (shardOfTheThrone === index ? 1 : 0) +
+      (styx === index ? 1 : 0) +
       objectives.reduce(
         (accumulator, objective) =>
           accumulator +

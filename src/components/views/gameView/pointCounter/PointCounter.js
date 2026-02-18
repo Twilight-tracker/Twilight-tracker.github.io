@@ -1,6 +1,6 @@
 import { useStorage } from "../../../../hooks/useStorage";
 import { useTotalPoints } from "../../../../hooks/useTotalPoints";
-import HexGrid from "../../../Layout/HexGrid";
+import HexGrid from "../../../core/HexGrid";
 import PointCounterItem from "./PointCounterItem";
 import Clock from "./Clock";
 import classes from "./PointCounter.module.css";
@@ -16,6 +16,7 @@ const PointCounter = ({ className }) => {
         {[...Array(6).keys()].map((index) => (
           <PointCounterItem
             key={index}
+            position={index}
             colorId={colors[index].colorId}
             factionId={factions[index].factionId}
             points={totalPoints[index]}

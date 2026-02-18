@@ -1,8 +1,12 @@
 import arborecPortrait from "./factionPortraits/arborec.png";
 import argentPortrait from "./factionPortraits/argent.png";
 import baronyPortrait from "./factionPortraits/barony.png";
+import bastionPortrait from "./factionPortraits/bastion.png";
 import cabalPortrait from "./factionPortraits/cabal.png";
+import crimsonPortrait from "./factionPortraits/crimson.png";
+import dwsPortrait from "./factionPortraits/dws.png";
 import empyreanPortrait from "./factionPortraits/empyrean.png";
+import firmamentPortrait from "./factionPortraits/firmament.png";
 import ghostsPortrait from "./factionPortraits/ghosts.png";
 import hacanPortrait from "./factionPortraits/hacan.png";
 import jolnarPortrait from "./factionPortraits/jolnar.png";
@@ -15,6 +19,8 @@ import naaluPortrait from "./factionPortraits/naalu.png";
 import naazrokhaPortrait from "./factionPortraits/naazrokha.png";
 import nekroPortrait from "./factionPortraits/nekro.png";
 import nomadPortrait from "./factionPortraits/nomad.png";
+import obsidianPortrait from "./factionPortraits/obsidian.png";
+import ralnelPortrait from "./factionPortraits/ralnel.png";
 import saarPortrait from "./factionPortraits/saar.png";
 import sardakkPortrait from "./factionPortraits/sardakk.png";
 import solPortrait from "./factionPortraits/sol.png";
@@ -28,8 +34,12 @@ import unknownPortrait from "./factionPortraits/unknown.png";
 import arborecIcon from "./factionIcons/arborec.png";
 import argentIcon from "./factionIcons/argent.png";
 import baronyIcon from "./factionIcons/barony.png";
+import bastionIcon from "./factionIcons/bastion.png";
 import cabalIcon from "./factionIcons/cabal.png";
+import crimsonIcon from "./factionIcons/crimson.png";
+import dwsIcon from "./factionIcons/dws.png";
 import empyreanIcon from "./factionIcons/empyrean.png";
+import firmamentIcon from "./factionIcons/firmament.png";
 import ghostsIcon from "./factionIcons/ghosts.png";
 import hacanIcon from "./factionIcons/hacan.png";
 import jolnarIcon from "./factionIcons/jolnar.png";
@@ -42,6 +52,8 @@ import naaluIcon from "./factionIcons/naalu.png";
 import naazrokhaIcon from "./factionIcons/naazrokha.png";
 import nekroIcon from "./factionIcons/nekro.png";
 import nomadIcon from "./factionIcons/nomad.png";
+import obsidianIcon from "./factionIcons/obsidian.png";
+import ralnelIcon from "./factionIcons/ralnel.png";
 import saarIcon from "./factionIcons/saar.png";
 import sardakkIcon from "./factionIcons/sardakk.png";
 import solIcon from "./factionIcons/sol.png";
@@ -93,6 +105,16 @@ export const factionsAssets = {
       alt: "baronyIcon",
     }
   },
+  bastion: {
+    portrait: {
+      src: bastionPortrait,
+      alt: "bastionPortrait",
+    },
+    icon: {
+      src: bastionIcon,
+      alt: "bastionIcon",
+    }
+  },
   cabal: {
     portrait: {
       src: cabalPortrait,
@@ -103,6 +125,26 @@ export const factionsAssets = {
       alt: "cabalIcon",
     }
   },
+  crimson: {
+    portrait: {
+      src: crimsonPortrait,
+      alt: "crimsonPortrait",
+    },
+    icon: {
+      src: crimsonIcon,
+      alt: "crimsonIcon",
+    }
+  },
+  dws: {
+    portrait: {
+      src: dwsPortrait,
+      alt: "dwsPortrait",
+    },
+    icon: {
+      src: dwsIcon,
+      alt: "dwsIcon",
+    }
+  },
   empyrean: {
     portrait: {
       src: empyreanPortrait,
@@ -111,6 +153,16 @@ export const factionsAssets = {
     icon: {
       src: empyreanIcon,
       alt: "empyreanIcon",
+    }
+  },
+  firmament: {
+    portrait: {
+      src: firmamentPortrait,
+      alt: "firmamentPortrait",
+    },
+    icon: {
+      src: firmamentIcon,
+      alt: "firmamentIcon",
     }
   },
   ghosts: {
@@ -221,6 +273,26 @@ export const factionsAssets = {
     icon: {
       src: nekroIcon,
       alt: "nekroIcon",
+    }
+  },
+  obsidian: {
+    portrait: {
+      src: obsidianPortrait,
+      alt: "obsidianPortrait",
+    },
+    icon: {
+      src: obsidianIcon,
+      alt: "obsidianIcon",
+    }
+  },
+  ralnel: {
+    portrait: {
+      src: ralnelPortrait,
+      alt: "ralnelPortrait",
+    },
+    icon: {
+      src: ralnelIcon,
+      alt: "ralnelIcon",
     }
   },
   nomad: {

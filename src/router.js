@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Background from "./components/Layout/Background";
+import Background from "./components/core/Background";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
-import CardsPage from "./pages/CardsPage";
+import ObjectivesPage from "./pages/ObjectivesPage";
 import NewGamePage from "./pages/NewGamePage";
 import GamePage from "./pages/GamePage";
 
@@ -18,8 +18,8 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "cards",
-        element: <CardsPage />,
+        path: "objectives",
+        element: <ObjectivesPage />,
       },
       {
         path: "newGame",

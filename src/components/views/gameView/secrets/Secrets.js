@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useStorage } from "../../../../hooks/useStorage";
 import SecretFlower from "./SecretFlower";
-import CardSelection from "../CardSelection";
-import SecretsFullView from "./SecretsFullView";
+import SelectSecretsScreen from "./SelectSecretsScreen";
+import CurrentSecretsView from "./CurrentSecretsView";
 import PointsTable from "../pointsTable/PointsTable";
 import classes from "./Secrets.module.css";
 
@@ -45,13 +45,12 @@ const Secrets = ({ className }) => {
         ))}
       </PointsTable.Block>
       {indexes.secretIndex >= 0 && (
-        <CardSelection
-          filters={{ stage1: false, stage2: false, secret: true }}
+        <SelectSecretsScreen
           onDiscard={() => setIndexes(defaultIndexes)}
           onConfirm={secretSelectedHandler}
         />
       )}
-      <SecretsFullView />
+      <CurrentSecretsView />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
-import CardContentDescription from "./CardContentDescription";
-import CardContentTitle from "./CardContentTitle";
-import classes from "./CardContent.module.css";
+import ObjectiveCardDescription from "./ObjectiveCardDescription";
+import ObjectiveCardTitle from "./ObjectiveCardTitle";
+import classes from "./ObjectiveCardContent.module.css";
 
 const cx = classNames.bind(classes);
 
@@ -23,7 +23,7 @@ const expansions = {
   omega: { label: "Ω" },
 };
 
-const CardContent = ({ className, card, date = -1 }) => {
+const ObjectiveCardContent = ({ className, card, date = -1 }) => {
   const stage = stages[card.stage];
   const expansion = expansions[card.expansion];
 
@@ -40,14 +40,11 @@ const CardContent = ({ className, card, date = -1 }) => {
   return (
     <div className={className}>
       <div className={classes.content}>
-        <CardContentTitle className={classes.title}>
+        <ObjectiveCardTitle className={classes.title}>
           {card.title.value}
-        </CardContentTitle>
+        </ObjectiveCardTitle>
         <div className={classes.phase}>{phases[card.phase]}</div>
-        <CardContentDescription
-          className={classes.description}
-          card={card}
-        ></CardContentDescription>
+        <ObjectiveCardDescription className={classes.description} card={card} />
         {date === -1 && (
           <div className={pointsClass}>
             <div className={classes.pointsValue}>{stage.points}</div>
@@ -63,4 +60,4 @@ const CardContent = ({ className, card, date = -1 }) => {
   );
 };
 
-export default CardContent;
+export default ObjectiveCardContent;

@@ -31,7 +31,7 @@ const ObjectiveCanvas = ({ className, cardIndex, onSelectCard }) => {
           return;
         }
         setClickCount(0);
-        dispatch("RESET_OBJECTIVE", { cardIndex: cardIndex });
+        dispatch("RESET_OBJECTIVE", { cardIndex });
       }
     : () => {
         onSelectCard(cardIndex);
@@ -40,7 +40,7 @@ const ObjectiveCanvas = ({ className, cardIndex, onSelectCard }) => {
   const petalClickHandlers = isActiveFlower
     ? petalColors.map(
         (_, index) => () =>
-          dispatch("TOGGLE_POINTS", {
+          dispatch("TOGGLE_OBJECTIVE_POINTS", {
             cardIndex,
             playerIndex: index,
           })

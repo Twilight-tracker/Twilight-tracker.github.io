@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useStorage } from "../../../hooks/useStorage";
-import HexGrid from "../../Layout/HexGrid";
+import HexGrid from "../../core/HexGrid";
 import FactionPickerItem from "./FactionPickerItem";
 import HexedCanvas from "../../svg/HexedCanvas";
 import classes from "./FactionPicker.module.css";

@@ -4,7 +4,7 @@ import MagnifierButton from "./ui/MagnifierButton";
 import PointCounter from "./pointCounter/PointCounter";
 import PointsTable from "./pointsTable/PointsTable";
 import Mecatol from "./mecatol/Mecatol";
-import Relics from "./relics/Relics";
+import Gains from "./gains/Gains";
 import Objectives from "./objectives/Objectives";
 import classes from "./GameView.module.css";
 
@@ -22,7 +22,7 @@ const GameView = () => {
         <PointCounter className={classes.pointCounter} />
         <PointsTable className={classes.pointsTable} />
         <Mecatol className={classes.mecatol} />
-        <Relics className={classes.relics} />
+        <Gains className={classes.gains} />
         <Objectives className={classes.objectives} />
       </div>
     </GameViewContext.Provider>

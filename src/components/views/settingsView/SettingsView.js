@@ -9,7 +9,7 @@ const SettingsContext = createContext();
 export const useSettingsContext = () => useContext(SettingsContext);
 
 const SettingsView = () => {
-  const { dispatch } = useStorage();
+  const { dispatch } = useStorage(false);
   const [playerActivated, setPlayerActivated] = useState(-1);
 
   const setFaction = (factionId) => {

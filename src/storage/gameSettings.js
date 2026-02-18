@@ -53,6 +53,20 @@ export const actions = {
     return { gameSettings };
   },
 
+  SWITCH_FACTION: (currentState, { position }) => {
+    if (!validatePosition(position)) {
+      return { status: "error", message: "Incorrect position" };
+    }
+    const gameSettings = { ...currentState.gameSettings };
+    const factionId = gameSettings.factions[position].factionId;
+    const switchTo = factions[factionId].switchTo;
+    if (switchTo !== null) {
+      gameSettings.factions[position].factionId = switchTo;
+    }
+    localStorage.setItem("gameSettings", JSON.stringify(gameSettings));
+    return { gameSettings };
+  },
+
   SET_POINTS: (currentState, { points }) => {
     if (!validatePoints(points)) {
       return { status: "error", message: "Incorrect points" };
@@ -99,10 +113,12 @@ const initialState = {
   },
 };
 
-export const configureStorage = () => {
+const configureStorage = () => {
   localStorage.setItem(
     "gameSettings",
     JSON.stringify(initialState.gameSettings)
   );
   initStorage(actions, initialState);
 };
+
+export default configureStorage;

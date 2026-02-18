@@ -9,7 +9,7 @@ const circleRadius = 6;
 const strokeWidth = 2;
 const mult = 0.04;
 
-const SecretPath = ({ className, center, radius }) => {
+const EyePath = ({ className, center, radius }) => {
   const context = useHexedCanvasContext();
   if (!center) {
     center = { x: 0.5 * context.width, y: 0.5 * context.height };
@@ -47,4 +47,4 @@ const SecretPath = ({ className, center, radius }) => {
   );
 };
 
-export default SecretPath;
+export default EyePath;

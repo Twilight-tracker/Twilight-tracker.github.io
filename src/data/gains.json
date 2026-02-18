@@ -1,0 +1,23 @@
+{
+  "shardOfTheThrone": {
+    "id": "shardOfTheThrone",
+    "title": {
+      "src": "Shard of the Throne",
+      "value": "Осколок трона"
+    }
+  },
+  "crownOfEmphidia": {
+    "id": "crownOfEmphidia",
+    "title": {
+      "src": "The Crown of Emphidia",
+      "value": "Корона Эмфидии"
+    }
+  },
+  "styx": {
+    "id": "styx",
+    "title": {
+      "src": "Styx",
+      "value": "Стикс"
+    }
+  }
+}

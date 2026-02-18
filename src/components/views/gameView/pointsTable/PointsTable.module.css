@@ -1,6 +1,7 @@
 .main {
+  position: relative;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 20px;
   --pointsTable-row-height: 52px;
 }

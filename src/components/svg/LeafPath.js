@@ -2,7 +2,7 @@ import { useHexedCanvasContext } from "./HexedCanvas";
 import { useButtonContext } from "../ui/Button";
 
 const innerMult = 0.12;
-const outerMult = 0.85;
+const outerMult = 0.75;
 const dataAngles = [-Math.PI / 3, 0, Math.PI / 3];
 
 const LeafPath = ({ className, leafType, center, radius, ...props }) => {

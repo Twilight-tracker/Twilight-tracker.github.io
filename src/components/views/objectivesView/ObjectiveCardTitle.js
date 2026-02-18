@@ -1,6 +1,6 @@
-import classes from "./CardContentTitle.module.css";
+import classes from "./ObjectiveCardTitle.module.css";
 
-const CardContentTitle = ({ className, children }) => {
+const ObjectiveCardTitle = ({ className, children }) => {
   return (
     <div className={className}>
       <div className={classes.title}>
@@ -11,4 +11,4 @@ const CardContentTitle = ({ className, children }) => {
   );
 };
 
-export default CardContentTitle;
+export default ObjectiveCardTitle;

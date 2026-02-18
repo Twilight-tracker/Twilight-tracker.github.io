@@ -8,7 +8,7 @@ import PlusPath from "./PlusPath";
 import CheckPath from "./CheckPath";
 import MagnifierPath from "./MagnifierPath";
 import BurgerPath from "./BurgerPath";
-import SecretPath from "./SecretPath";
+import EyePath from "./EyePath";
 import StripesPattern from "./StripesPattern";
 import PetalHexes from "./PetalHexes";
 
@@ -54,7 +54,7 @@ HexedCanvas.Plus = PlusPath;
 HexedCanvas.Check = CheckPath;
 HexedCanvas.Magnifier = MagnifierPath;
 HexedCanvas.Burger = BurgerPath;
-HexedCanvas.Secret = SecretPath;
+HexedCanvas.Eye = EyePath;
 
 HexedCanvas.StripesPattern = StripesPattern;
 

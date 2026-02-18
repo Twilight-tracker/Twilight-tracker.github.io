@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import { useStorage } from "../../../../hooks/useStorage";
 import { plusOneVisible } from "../../../../utils/plusOneVisible";
 import ObjectiveFlower from "./ObjectiveFlower";
-import CardSelection from "../CardSelection";
+import ObjectivesScreen from "./ObjectivesScreen";
 import classes from "./Objectives.module.css";
 
 const cx = classNames.bind(classes);
@@ -49,7 +49,7 @@ const Objectives = ({ className }) => {
         ))}
       </div>
       {cardIndex >= 0 && (
-        <CardSelection
+        <ObjectivesScreen
           filters={filters}
           onDiscard={() => setCardIndex(-1)}
           onConfirm={cardSelectedHandler}

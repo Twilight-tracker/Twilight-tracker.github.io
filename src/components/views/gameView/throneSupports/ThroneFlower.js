@@ -10,13 +10,13 @@ const cx = classNames.bind(classes);
 
 const radius = 95;
 const supporterCenter = { x: 100, y: 110 };
-const leafCenter = { x: 200, y: 110 };
+const leafCenter = { x: 150, y: 110 };
 
-const centerX = 520;
+const centerX = 470;
 const centerY = 110;
-const delta = 185;
+const delta = 120;
 
-const hexBase = { width: 1375, height: 220, radius };
+const hexBase = { width: 1070, height: 220, radius };
 
 const ThroneFlower = ({
   supporterIndex,

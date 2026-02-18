@@ -3,7 +3,7 @@ import LinkButton from "../../ui/LinkButton";
 import classes from "./SettingsMenu.module.css";
 
 const SettingsMenu = () => {
-  const { dispatch } = useStorage();
+  const { dispatch } = useStorage(false);
   const resetHandler = () => {
     dispatch("RESET_STATE", {});
   };

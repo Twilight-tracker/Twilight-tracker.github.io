@@ -1,8 +1,16 @@
 import { initStorage } from "../hooks/useStorage";
+import gains from "../data/gains.json";
+import relics from "../data/relics.json";
+import agendas from "../data/agendas.json";
+
+const GAIN_RESETED = -1;
+const RELIC_RESETED = -1;
+const AGENDA_RESETED = -2;
 
 const objectiveCount = 10;
 const playerCount = 6;
 const secretCount = 4;
+
 const defaultPoints = [...Array(playerCount).keys()].map((_) => false);
 const defaultObjective = { cardId: undefined, points: defaultPoints, date: -1 };
 const defaultExtraPoints = [...Array(playerCount).keys()].map((_) => 0);
@@ -12,23 +20,42 @@ const defaultSecret = {
   cardId: undefined,
 };
 const defaultPlayerSecrets = [...Array(secretCount).keys()].map((_) =>
-  structuredClone(defaultSecret)
+  structuredClone(defaultSecret),
 );
 const defaultSecrets = [...Array(playerCount).keys()].map((_) =>
-  structuredClone(defaultPlayerSecrets)
+  structuredClone(defaultPlayerSecrets),
 );
-const defaultRelics = { emphidiaCrown: -1, throneShard: -1 };
 const defaultThroneSupports = [...Array(playerCount).keys()].map((_) => -1);
+
+const defaultGains = Object.fromEntries(
+  Object.values(gains)
+    .filter(({ value }) => value)
+    .map(({ id }) => [id, GAIN_RESETED]),
+);
+
+const defaultRelic = {
+  playerIndex: RELIC_RESETED,
+  purged: false,
+  pointTaken: false,
+};
+const defaultRelics = Object.fromEntries(
+  Object.keys(relics).map((id) => [id, structuredClone(defaultRelic)]),
+);
+const defaultAgendas = Object.fromEntries(
+  Object.keys(agendas).map((id) => [id, AGENDA_RESETED]),
+);
 
 const defaults = {
   objectives: [...Array(objectiveCount).keys()].map((_) =>
-    structuredClone(defaultObjective)
+    structuredClone(defaultObjective),
   ),
   secrets: structuredClone(defaultSecrets),
   extraPoints: structuredClone(defaultExtraPoints),
   mecatolPoints: structuredClone(defaultMecatolPoints),
-  relics: { ...defaultRelics },
   throneSupports: [...defaultThroneSupports],
+  gains: { ...defaultGains },
+  relics: structuredClone(defaultRelics),
+  agendas: { ...defaultAgendas },
 };
 
 const validateCardIndex = (cardIndex) =>
@@ -38,7 +65,13 @@ const validatePlayerIndex = (playerIndex) =>
 const validateSecretIndex = (secretIndex) =>
   secretIndex >= 0 && secretIndex < secretCount;
 
+const validateGain = (gainId) => Object.keys(gains).includes(gainId);
+const validateRelic = (relicId) => Object.keys(relics).includes(relicId);
+
 export const actions = {
+
+  // OBJECTIVES
+
   SET_OBJECTIVE: (currentState, { cardIndex, cardId }) => {
     if (!validateCardIndex(cardIndex)) {
       return { status: "error", meassage: "Incorrect cardIndex" };
@@ -53,7 +86,7 @@ export const actions = {
     return { gameState };
   },
 
-  TOGGLE_POINTS: (currentState, { cardIndex, playerIndex }) => {
+  TOGGLE_OBJECTIVE_POINTS: (currentState, { cardIndex, playerIndex }) => {
     if (!validateCardIndex(cardIndex)) {
       return { status: "error", message: "Incorrect card index" };
     }
@@ -86,6 +119,8 @@ export const actions = {
     localStorage.setItem("gameState", JSON.stringify(gameState));
     return { gameState };
   },
+
+  // SECRETS
 
   SET_SECRET_TAKEN: (currentState, { playerIndex, secretIndex }) => {
     if (!validatePlayerIndex(playerIndex)) {
@@ -146,6 +181,8 @@ export const actions = {
     return { gameState };
   },
 
+  // EXTRA POINTS
+
   SET_EXTRA_POINTS: (currentState, { playerIndex, value }) => {
     if (!validatePlayerIndex(playerIndex)) {
       return { status: "error", message: "Incorrect player index" };
@@ -164,6 +201,8 @@ export const actions = {
     localStorage.setItem("gameState", JSON.stringify(gameState));
     return { gameState };
   },
+
+  // MECATOL POINTS
 
   SET_MECATOL_POINTS: (currentState, { playerIndex, value }) => {
     if (!validatePlayerIndex(playerIndex)) {
@@ -184,19 +223,92 @@ export const actions = {
     return { gameState };
   },
 
-  SET_RELIC: (currentState, { relicId, playerIndex }) => {
+  // GAINS
+
+  SET_GAIN: (currentState, { gainId, playerIndex }) => {
+    if (!validateGain(gainId)) {
+      return { status: "error", message: "Incorrect gain id" };
+    }
     if (!validatePlayerIndex(playerIndex)) {
       return { status: "error", message: "Incorrect player index" };
     }
     const gameState = { ...currentState.gameState };
-    gameState.relics[relicId] = playerIndex;
+    gameState.gains[gainId] = playerIndex;
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  RESET_GAIN: (currentState, { gainId }) => {
+    if (!validateGain(gainId)) {
+      return { status: "error", message: "Incorrect gain id" };
+    }
+    const gameState = { ...currentState.gameState };
+    gameState.gains[gainId] = -1;
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  RESET_GAINS: (currentState, _) => {
+    const gameState = {
+      ...currentState.gameState,
+      gains: { ...defaultGains },
+    };
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  // RELICS
+
+  SET_RELIC_TAKEN: (currentState, { relicId, playerIndex }) => {
+    if (!validateRelic(relicId)) {
+      return { status: "error", message: "Incorrect relic id" };
+    }
+    if (!validatePlayerIndex(playerIndex)) {
+      return { status: "error", message: "Incorrect player index" };
+    }
+    const gameState = { ...currentState.gameState };
+    gameState.relics[relicId].playerIndex = playerIndex;
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  RESET_RELIC_TAKEN: (currentState, { relicId }) => {
+    if (!validateRelic(relicId)) {
+      return { status: "error", message: "Incorrect relic id" };
+    }
+    const gameState = { ...currentState.gameState };
+    gameState.relics[relicId].playerIndex = RELIC_RESETED;
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  SWITCH_RELIC_POINT_TAKEN: (currentState, { relicId }) => {
+    if (!validateRelic(relicId)) {
+      return { status: "error", message: "Incorrect relic id" };
+    }
+    const gameState = { ...currentState.gameState };
+    gameState.relics[relicId].pointTaken =
+      !gameState.relics[relicId].pointTaken;
+    localStorage.setItem("gameState", JSON.stringify(gameState));
+    return { gameState };
+  },
+
+  SWITCH_RELIC_PURGED: (currentState, { relicId }) => {
+    if (!validateRelic(relicId)) {
+      return { status: "error", message: "Incorrect relic id" };
+    }
+    const gameState = { ...currentState.gameState };
+    gameState.relics[relicId].purged = !gameState.relics[relicId].purged;
     localStorage.setItem("gameState", JSON.stringify(gameState));
     return { gameState };
   },
 
   RESET_RELIC: (currentState, { relicId }) => {
+    if (!validateRelic(relicId)) {
+      return { status: "error", message: "Incorrect relic id" };
+    }
     const gameState = { ...currentState.gameState };
-    gameState.relics[relicId] = -1;
+    gameState.relics[relicId] = structuredClone(defaultRelic);
     localStorage.setItem("gameState", JSON.stringify(gameState));
     return { gameState };
   },
@@ -204,11 +316,13 @@ export const actions = {
   RESET_RELICS: (currentState, _) => {
     const gameState = {
       ...currentState.gameState,
-      relics: { ...defaultRelics },
+      relics: structuredClone(defaultRelics),
     };
     localStorage.setItem("gameState", JSON.stringify(gameState));
     return { gameState };
   },
+
+  // THRONE SUPPORT
 
   SET_THRONE_SUPPORT: (currentState, { supporterIndex, receiverIndex }) => {
     if (!validatePlayerIndex(supporterIndex)) {
@@ -242,6 +356,8 @@ export const actions = {
     return { gameState };
   },
 
+  // OVERALL
+
   RESET_STATE: (_1, _2) => {
     localStorage.setItem("gameState", JSON.stringify(defaults));
     return { gameState: structuredClone(defaults) };
@@ -256,7 +372,9 @@ const initialState = {
   },
 };
 
-export const configureStorage = () => {
+const configureStorage = () => {
   localStorage.setItem("gameState", JSON.stringify(initialState.gameState));
   initStorage(actions, initialState);
 };
+
+export default configureStorage;

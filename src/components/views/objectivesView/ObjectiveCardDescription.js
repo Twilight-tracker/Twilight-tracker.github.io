@@ -1,6 +1,6 @@
-import classes from "./CardContentDescription.module.css";
+import classes from "./ObjectiveCardDescription.module.css";
 
-const CardContentDescription = ({ className, card }) => {
+const ObjectiveCardDescription = ({ className, card }) => {
   return (
     <div className={[className, classes.block].join(" ")}>
       <div className={classes.shape}></div>
@@ -12,4 +12,4 @@ const CardContentDescription = ({ className, card }) => {
   );
 };
 
-export default CardContentDescription;
+export default ObjectiveCardDescription;

@@ -1,5 +1,5 @@
-import { configureStorage as initGameStateStorage } from "./gameState";
-import { configureStorage as initGameSettingsStorage } from "./gameSettings";
+import initGameStateStorage from "./gameState";
+import initGameSettingsStorage from "./gameSettings";
 
 export const configureStorage = () => {
   initGameStateStorage();

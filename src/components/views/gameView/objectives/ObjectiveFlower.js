@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import { useStorage } from "../../../../hooks/useStorage";
 import { useGameViewContext } from "../GameView";
-import CardContent from "../../cardsView/CardContent";
+import ObjectiveCardContent from "../../objectivesView/ObjectiveCardContent";
 import Timer from "./Timer";
 import ObjectiveCanvas from "./ObjectiveCanvas";
 import ObjectiveIcons from "./ObjectiveIcons";
@@ -33,7 +33,7 @@ const ObjectiveFlower = ({ cardIndex, onSelectCard }) => {
       <ObjectiveCanvas cardIndex={cardIndex} onSelectCard={onSelectCard} />
       <ObjectiveIcons className={classes.icons} cardIndex={cardIndex} />
       {isActiveFlower && (
-        <CardContent className={classes.content} card={card} date={date} />
+        <ObjectiveCardContent className={classes.content} card={card} date={date} />
       )}
       {!isActiveFlower && (
         <Timer className={classes.content} dateBefore={dateBefore} />

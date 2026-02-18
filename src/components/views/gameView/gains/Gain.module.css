@@ -1,0 +1,68 @@
+.group {
+  isolation: isolate;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.idleGroup {
+  &:has(:hover) .label::after {
+    background: hsla(39, 60%, 60%, 0.9);
+  }
+
+  &:has(:hover) {
+    --groupHovered: 1;
+  }
+}
+
+.image {
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  bottom: -2%;
+  left: 7%;
+  vertical-align: bottom;
+  padding: 4px;
+  width: 86%;
+  margin: 0 auto;
+  z-index: 20;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  line-height: 1;
+  color: hsl(39, 100%, 20%);
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: hsla(39, 60%, 70%, 0.85);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 2px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: skewY(-2deg);
+    z-index: -1;
+  }
+}
+
+.petals {
+  position: absolute;
+  width: 150%;
+  top: -24%;
+  left: -25%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.staticPetals {
+  position: absolute;
+  width: 150%;
+  top: -24%;
+  left: -25%;
+  z-index: -1;
+  pointer-events: none;
+}
