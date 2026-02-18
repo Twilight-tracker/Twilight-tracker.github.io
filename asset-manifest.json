@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.989dbdbf.css",
-    "main.js": "/static/js/main.1ac3d01d.js",
+    "main.css": "/static/css/main.c523dcfa.css",
+    "main.js": "/static/js/main.43d97bba.js",
     "static/media/pexels-kaip-1341279.jpg": "/static/media/pexels-kaip-1341279.6d582c84c68f1ca3b47d.jpg",
     "static/media/hacan.png": "/static/media/hacan.f4f63c29f305cf9b90b6.png",
     "static/media/xxcha.png": "/static/media/xxcha.28898d85638e0e9dc033.png",
@@ -16,28 +16,35 @@
     "static/media/cabal.png": "/static/media/cabal.f676295e7dbf5d3b3d85.png",
     "static/media/muaat.png": "/static/media/muaat.ea8fa3619b51ba3c58b0.png",
     "static/media/saar.png": "/static/media/saar.7f252923ccef0c5da91a.png",
+    "static/media/dws.png": "/static/media/dws.d9d924a21b273ec83800.png",
     "static/media/mahact.png": "/static/media/mahact.e73a1000a2b165b78845.png",
+    "static/media/crimson.png": "/static/media/crimson.535bcc2d5201bcef217c.png",
     "static/media/mentak.png": "/static/media/mentak.7c1631e7e26fb92bc001.png",
     "static/media/ghosts.png": "/static/media/ghosts.dfafbd7f122ecc16fb62.png",
     "static/media/argent.png": "/static/media/argent.f5646e8d29c89a37293a.png",
     "static/media/naazrokha.png": "/static/media/naazrokha.8835c4fce15949ca400a.png",
+    "static/media/ralnel.png": "/static/media/ralnel.13d097431d449c2dc566.png",
     "static/media/nekro.png": "/static/media/nekro.c4c355ac2dcd87a563d6.png",
     "static/media/yssaril.png": "/static/media/yssaril.fd0e06f10b58e09d066d.png",
     "static/media/empyrean.png": "/static/media/empyrean.fd5b8fcd11d4840bbcd7.png",
+    "static/media/bastion.png": "/static/media/bastion.38923355d407fb0f05d5.png",
     "static/media/yin.png": "/static/media/yin.b71f9bd95d3c81d6f2d4.png",
     "static/media/titans.png": "/static/media/titans.13ac830a947e650e09b0.png",
     "static/media/nomad.png": "/static/media/nomad.9d7cad4f7d2f9a823015.png",
+    "static/media/firmament.png": "/static/media/firmament.6f4f26fc369bd6cec431.png",
     "static/media/naalu.png": "/static/media/naalu.9c266a8f072689911e7e.png",
-    "static/media/throneShard.png": "/static/media/throneShard.148a711d324fb7a7d5c3.png",
+    "static/media/obsidian.png": "/static/media/obsidian.959390c6fd05ddba0796.png",
+    "static/media/shardOfTheThrone.png": "/static/media/shardOfTheThrone.148a711d324fb7a7d5c3.png",
     "static/media/mecatol.png": "/static/media/mecatol.c5931f82d6ad39f1c35f.png",
-    "static/media/emphidiaCrown.png": "/static/media/emphidiaCrown.a647eedbdf8ba75e4ed0.png",
+    "static/media/crownOfEmphidia.png": "/static/media/crownOfEmphidia.a647eedbdf8ba75e4ed0.png",
+    "static/media/styx.png": "/static/media/styx.d845c6136c00074fad95.png",
     "static/media/unknown.png": "/static/media/unknown.b3ded1f05a6fff3f4e15.png",
     "index.html": "/index.html",
-    "main.989dbdbf.css.map": "/static/css/main.989dbdbf.css.map",
-    "main.1ac3d01d.js.map": "/static/js/main.1ac3d01d.js.map"
+    "main.c523dcfa.css.map": "/static/css/main.c523dcfa.css.map",
+    "main.43d97bba.js.map": "/static/js/main.43d97bba.js.map"
   },
   "entrypoints": [
-    "static/css/main.989dbdbf.css",
-    "static/js/main.1ac3d01d.js"
+    "static/css/main.c523dcfa.css",
+    "static/js/main.43d97bba.js"
   ]
 }
